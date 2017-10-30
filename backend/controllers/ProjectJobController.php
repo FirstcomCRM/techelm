@@ -467,13 +467,13 @@ $userGroupArray = ArrayHelper::map(UserGroup::find()->all(), 'id', 'name');
     protected function send($reg_id, $message, $img_url, $tag, $user_id,$id){
       //if (!defined('constant')) define('constant', 'value');
       if (!defined('GOOGLE_API_KEYS')) {
-          define("GOOGLE_API_KEYS", "AIzaSyAxewEiK97rX2fGNZ-USeIxWujL68uA78Y");
+          define("GOOGLE_API_KEYS", "AIzaSyAxewEiK97rX2fGNZ-204eIxWuj768uA78");// Techelm Mobile, ask richard for correct api key
       }
 
       if (!defined('GOOGLE_GCM_URLS')) {
           define("GOOGLE_GCM_URLS", "https://fcm.googleapis.com/fcm/send");
       }
-    //  define("GOOGLE_API_KEYS", "AIzaSyAxewEiK97rX2fGNZ-USeIxWujL68uA78Y"); // Techelm Mobile
+    //  define("GOOGLE_API_KEYS", "AIzaSyAxewEiK97rX2fGNZ-USeIxWujL68201uKY"); // Techelm Mobile, ask richard for correct api key
     //  define("GOOGLE_GCM_URLS", "https://fcm.googleapis.com/fcm/send");
 
       $data = array(
