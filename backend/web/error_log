@@ -1,0 +1,1377 @@
+[23-May-2017 14:02:23 Asia/Singapore] PHP Parse error:  syntax error, unexpected 'static' (T_STATIC), expecting identifier (T_STRING) in /home/techelm/public_html/system/common/models/SearchProjectJob.php on line 78
+[23-May-2017 14:02:27 Asia/Singapore] PHP Parse error:  syntax error, unexpected 'static' (T_STATIC), expecting identifier (T_STRING) in /home/techelm/public_html/system/common/models/SearchProjectJob.php on line 78
+[23-May-2017 14:40:12 Asia/Singapore] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\base\View::{closure}() does not exist' in /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\base\\View', '{closure}')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\base\\View::...')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\base\\View', '{closure}', Array, 4)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\UnknownPropertyException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\UnknownPropertyException))
+#13 {main}
+Previous exception:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: common\models\Equipments::status' in /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Component.php:147
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('status')
+#1 /home/techelm/public_html/system/backend/views/equipment/view.php(38): yii\db\BaseActiveRecord->__get('status')
+#2 [internal function]: yii\base\View->{closure}(Object(common\models\Equipments), Object(yii\widgets\DetailView))
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/DetailView.php(243): call_user_func(Object(Closure), Object(common\models\Equipments), Object(yii\widgets\DetailView))
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/DetailView.php(141): yii\widgets\DetailView->normalizeAttributes()
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Object.php(107): yii\widgets\DetailView->init()
+#6 [internal function]: yii\base\Object->__construct(Array)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/di/Container.php(381): ReflectionClass->newInstanceArgs(Array)
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('yii\\widgets\\Det...', Array, Array)
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/BaseYii.php(344): yii\di\Container->get('yii\\widgets\\Det...', Array, Array)
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Widget.php(136): yii\BaseYii::createObject(Array)
+#11 /home/techelm/public_html/system/backend/views/equipment/view.php(47): yii\base\Widget::widget(Array)
+#12 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#13 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#14 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/techelm/p...', Array, Object(backend\controllers\EquipmentController))
+#15 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('view', Array, Object(backend\controllers\EquipmentController))
+#16 /home/techelm/public_html/system/backend/controllers/EquipmentController.php(56): yii\base\Controller->render('view', Array)
+#17 [internal function]: backend\controllers\EquipmentController->actionView('1')
+#18 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#19 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#20 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('view', Array)
+#21 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('equipment/view', Array)
+#22 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 /home/techelm/public_html/system/backend/web/index.php(17): yii\base\Application->run()
+#24 {main}
+$_SERVER = [
+    'AUTH_TYPE' => 'Basic',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'CONTEXT_PREFIX' => '',
+    'DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => 'timezone=Asia/Shanghai; cpsession=techelm%3aRSmm9rJgOE3fsEqF%2c2b16b1d6bdea8b8615cefe0c9b6d9db3; advanced-backend=miue63ca66vnskdtag7ofq6uh6; _csrf-backend=a85e24c497298f9585de8a26a974a174d10291cd1a56a998c3cf3109ef5b7a4aa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22U-Y-b8ZOegh7WQjQyIO9QjGZzcSN5aJj%22%3B%7D',
+    'HTTP_HOST' => 'techelm2012.firstcomdemolinks.com',
+    'HTTP_REFERER' => 'http://techelm2012.firstcomdemolinks.com/system/backend/web/index.php?r=equipment%2Findex',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+    'PATH' => '/bin:/usr/bin',
+    'PHP_AUTH_PW' => 'opendemolink88',
+    'PHP_AUTH_USER' => 'firstcom',
+    'QUERY_STRING' => 'r=equipment%2Fview&id=1',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '119.92.213.132',
+    'REMOTE_PORT' => '30160',
+    'REMOTE_USER' => 'firstcom',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_SCHEME' => 'http',
+    'REQUEST_URI' => '/system/backend/web/index.php?r=equipment%2Fview&id=1',
+    'SCRIPT_FILENAME' => '/home/techelm/public_html/system/backend/web/index.php',
+    'SCRIPT_NAME' => '/system/backend/web/index.php',
+    'SERVER_ADDR' => '103.15.232.50',
+    'SERVER_ADMIN' => 'webmaster@techelm2012.firstcomdemolinks.com',
+    'SERVER_NAME' => 'techelm2012.firstcomdemolinks.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'TZ' => 'Etc/GMT-8',
+    'UNIQUE_ID' => 'WSPZSwirKiZHljQi1xM14AAAARQ',
+    'PHP_SELF' => '/system/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1495521611.9377200603485107421875,
+    'REQUEST_TIME' => 1495521611,
+    'argv' => [
+        'r=equipment%2Fview&id=1',
+    ],
+    'argc' => 1,
+]
+[23-May-2017 16:12:53 Asia/Singapore] PHP Parse error:  syntax error, unexpected 'label' (T_STRING), expecting ']' in /home/techelm/public_html/system/backend/views/race/index.php on line 30
+[23-May-2017 16:13:09 Asia/Singapore] PHP Parse error:  syntax error, unexpected ']' in /home/techelm/public_html/system/backend/views/race/index.php on line 38
+[23-May-2017 16:13:54 Asia/Singapore] PHP Parse error:  syntax error, unexpected ']' in /home/techelm/public_html/system/backend/views/race/index.php on line 38
+[31-May-2017 09:33:25 Asia/Singapore] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\base\View::{closure}() does not exist' in /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\base\\View', '{closure}')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\base\\View::...')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\base\\View', '{closure}', Array, 4)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\UnknownPropertyException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\UnknownPropertyException))
+#13 {main}
+Previous exception:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: common\models\Projectjob::active' in /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Component.php:147
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('active')
+#1 /home/techelm/public_html/system/backend/views/project-job/index.php(42): yii\db\BaseActiveRecord->__get('active')
+#2 [internal function]: yii\base\View->{closure}(Object(common\models\Projectjob), 11, 0, Object(yii\grid\DataColumn))
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(213): call_user_func(Object(Closure), Object(common\models\Projectjob), 11, 0, Object(yii\grid\DataColumn))
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(227): yii\grid\DataColumn->getDataCellValue(Object(common\models\Projectjob), 11, 0)
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/Column.php(110): yii\grid\DataColumn->renderDataCellContent(Object(common\models\Projectjob), 11, 0)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(507): yii\grid\Column->renderDataCell(Object(common\models\Projectjob), 11, 0)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(476): yii\grid\GridView->renderTableRow(Object(common\models\Projectjob), 11, 0)
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(347): yii\grid\GridView->renderTableBody()
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(155): yii\grid\GridView->renderItems()
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('{items}')
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#14 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#15 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#16 /home/techelm/public_html/system/backend/views/project-job/index.php(61): yii\base\Widget::widget(Array)
+#17 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#18 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#19 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/techelm/p...', Array, Object(backend\controllers\ProjectJobController))
+#20 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\ProjectJobController))
+#21 /home/techelm/public_html/system/backend/controllers/ProjectJobController.php(54): yii\base\Controller->render('index', Array)
+#22 [internal function]: backend\controllers\ProjectJobController->actionIndex()
+#23 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#25 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('', Array)
+#26 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('project-job', Array)
+#27 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/techelm/public_html/system/backend/web/index.php(17): yii\base\Application->run()
+#29 {main}
+$_SERVER = [
+    'AUTH_TYPE' => 'Basic',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'CONTEXT_PREFIX' => '',
+    'DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => 'timezone=Asia/Shanghai; cpsession=techelm%3aLS2PeZYIDnH040nX%2c453d0f55f7eded25b929f5076f38b11a; advanced-backend=u23qmcc19kuca7l7ldagc9a5d5; _csrf-backend=6c50c0ac3f9781468964274e29b77dbc0de6c2762e560238571e559036fdc96fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22viyxFuqjA53RB4tJic5tD6MoggwQynEW%22%3B%7D; _identity-backend=697780be6e8862739ab2f03bf20aae5266dd629322a569fd677c901b65b75e7aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22oCyxtVUs6nQzojDAe2Y_cntLtzPUZe-4%22%2C2592000%5D%22%3B%7D',
+    'HTTP_HOST' => 'techelm2012.firstcomdemolinks.com',
+    'HTTP_REFERER' => 'http://techelm2012.firstcomdemolinks.com/system/?r=servicejob',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+    'PATH' => '/bin:/usr/bin',
+    'PHP_AUTH_PW' => 'opendemolink88',
+    'PHP_AUTH_USER' => 'firstcom',
+    'QUERY_STRING' => 'r=project-job',
+    'REDIRECT_QUERY_STRING' => 'r=project-job',
+    'REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'WS4dZcnhjwsuBCn3yUZzUAAAAoE',
+    'REDIRECT_URL' => '/system/',
+    'REMOTE_ADDR' => '203.190.77.198',
+    'REMOTE_PORT' => '1239',
+    'REMOTE_USER' => 'firstcom',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_SCHEME' => 'http',
+    'REQUEST_URI' => '/system/?r=project-job',
+    'SCRIPT_FILENAME' => '/home/techelm/public_html/system/backend/web/index.php',
+    'SCRIPT_NAME' => '/system/backend/web/index.php',
+    'SERVER_ADDR' => '103.15.232.50',
+    'SERVER_ADMIN' => 'webmaster@techelm2012.firstcomdemolinks.com',
+    'SERVER_NAME' => 'techelm2012.firstcomdemolinks.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'TZ' => 'Etc/GMT-8',
+    'UNIQUE_ID' => 'WS4dZcnhjwsuBCn3yUZzUAAAAoE',
+    'PHP_SELF' => '/system/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1496194405.5702269077301025390625,
+    'REQUEST_TIME' => 1496194405,
+    'argv' => [
+        'r=project-job',
+    ],
+    'argc' => 1,
+]
+[31-May-2017 09:34:07 Asia/Singapore] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\base\View::{closure}() does not exist' in /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\base\\View', '{closure}')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\base\\View::...')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\base\\View', '{closure}', Array, 4)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\UnknownPropertyException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\UnknownPropertyException))
+#13 {main}
+Previous exception:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: common\models\UserGroup::active' in /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Component.php:147
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('active')
+#1 /home/techelm/public_html/system/backend/views/user-group/index.php(36): yii\db\BaseActiveRecord->__get('active')
+#2 [internal function]: yii\base\View->{closure}(Object(common\models\UserGroup), 1, 0, Object(yii\grid\DataColumn))
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(213): call_user_func(Object(Closure), Object(common\models\UserGroup), 1, 0, Object(yii\grid\DataColumn))
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(227): yii\grid\DataColumn->getDataCellValue(Object(common\models\UserGroup), 1, 0)
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/Column.php(110): yii\grid\DataColumn->renderDataCellContent(Object(common\models\UserGroup), 1, 0)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(507): yii\grid\Column->renderDataCell(Object(common\models\UserGroup), 1, 0)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(476): yii\grid\GridView->renderTableRow(Object(common\models\UserGroup), 1, 0)
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(347): yii\grid\GridView->renderTableBody()
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(155): yii\grid\GridView->renderItems()
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('{items}')
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#14 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#15 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#16 /home/techelm/public_html/system/backend/views/user-group/index.php(44): yii\base\Widget::widget(Array)
+#17 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#18 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#19 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/techelm/p...', Array, Object(backend\controllers\UserGroupController))
+#20 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserGroupController))
+#21 /home/techelm/public_html/system/backend/controllers/UserGroupController.php(46): yii\base\Controller->render('index', Array)
+#22 [internal function]: backend\controllers\UserGroupController->actionIndex()
+#23 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#25 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('', Array)
+#26 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('user-group', Array)
+#27 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/techelm/public_html/system/backend/web/index.php(17): yii\base\Application->run()
+#29 {main}
+$_SERVER = [
+    'AUTH_TYPE' => 'Basic',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'CONTEXT_PREFIX' => '',
+    'DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => 'timezone=Asia/Shanghai; cpsession=techelm%3aLS2PeZYIDnH040nX%2c453d0f55f7eded25b929f5076f38b11a; advanced-backend=u23qmcc19kuca7l7ldagc9a5d5; _csrf-backend=6c50c0ac3f9781468964274e29b77dbc0de6c2762e560238571e559036fdc96fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22viyxFuqjA53RB4tJic5tD6MoggwQynEW%22%3B%7D; _identity-backend=697780be6e8862739ab2f03bf20aae5266dd629322a569fd677c901b65b75e7aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22oCyxtVUs6nQzojDAe2Y_cntLtzPUZe-4%22%2C2592000%5D%22%3B%7D',
+    'HTTP_HOST' => 'techelm2012.firstcomdemolinks.com',
+    'HTTP_REFERER' => 'http://techelm2012.firstcomdemolinks.com/system/?r=user',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+    'PATH' => '/bin:/usr/bin',
+    'PHP_AUTH_PW' => 'opendemolink88',
+    'PHP_AUTH_USER' => 'firstcom',
+    'QUERY_STRING' => 'r=user-group',
+    'REDIRECT_QUERY_STRING' => 'r=user-group',
+    'REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'WS4dj-MauptuXKjEx1C0dQAAAlc',
+    'REDIRECT_URL' => '/system/',
+    'REMOTE_ADDR' => '203.190.77.198',
+    'REMOTE_PORT' => '46451',
+    'REMOTE_USER' => 'firstcom',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_SCHEME' => 'http',
+    'REQUEST_URI' => '/system/?r=user-group',
+    'SCRIPT_FILENAME' => '/home/techelm/public_html/system/backend/web/index.php',
+    'SCRIPT_NAME' => '/system/backend/web/index.php',
+    'SERVER_ADDR' => '103.15.232.50',
+    'SERVER_ADMIN' => 'webmaster@techelm2012.firstcomdemolinks.com',
+    'SERVER_NAME' => 'techelm2012.firstcomdemolinks.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'TZ' => 'Etc/GMT-8',
+    'UNIQUE_ID' => 'WS4dj-MauptuXKjEx1C0dQAAAlc',
+    'PHP_SELF' => '/system/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1496194447.6973590850830078125,
+    'REQUEST_TIME' => 1496194447,
+    'argv' => [
+        'r=user-group',
+    ],
+    'argc' => 1,
+]
+[31-May-2017 09:34:35 Asia/Singapore] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\base\View::{closure}() does not exist' in /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\base\\View', '{closure}')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\base\\View::...')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\base\\View', '{closure}', Array, 4)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\UnknownPropertyException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\UnknownPropertyException))
+#13 {main}
+Previous exception:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: common\models\ProjectjobPissTasks::active' in /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Component.php:147
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('active')
+#1 /home/techelm/public_html/system/backend/views/projectjob-piss-tasks/index.php(53): yii\db\BaseActiveRecord->__get('active')
+#2 [internal function]: yii\base\View->{closure}(Object(common\models\ProjectjobPissTasks), 73, 0, Object(yii\grid\DataColumn))
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(213): call_user_func(Object(Closure), Object(common\models\ProjectjobPissTasks), 73, 0, Object(yii\grid\DataColumn))
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(227): yii\grid\DataColumn->getDataCellValue(Object(common\models\ProjectjobPissTasks), 73, 0)
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/Column.php(110): yii\grid\DataColumn->renderDataCellContent(Object(common\models\ProjectjobPissTasks), 73, 0)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(507): yii\grid\Column->renderDataCell(Object(common\models\ProjectjobPissTasks), 73, 0)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(476): yii\grid\GridView->renderTableRow(Object(common\models\ProjectjobPissTasks), 73, 0)
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(347): yii\grid\GridView->renderTableBody()
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(155): yii\grid\GridView->renderItems()
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('{items}')
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#14 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#15 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#16 /home/techelm/public_html/system/backend/views/projectjob-piss-tasks/index.php(66): yii\base\Widget::widget(Array)
+#17 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#18 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#19 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/techelm/p...', Array, Object(backend\controllers\ProjectjobPissTasksController))
+#20 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\ProjectjobPissTasksController))
+#21 /home/techelm/public_html/system/backend/controllers/ProjectjobPissTasksController.php(48): yii\base\Controller->render('index', Array)
+#22 [internal function]: backend\controllers\ProjectjobPissTasksController->actionIndex()
+#23 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#25 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('', Array)
+#26 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('projectjob-piss...', Array)
+#27 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/techelm/public_html/system/backend/web/index.php(17): yii\base\Application->run()
+#29 {main}
+$_SERVER = [
+    'AUTH_TYPE' => 'Basic',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'CONTEXT_PREFIX' => '',
+    'DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => 'timezone=Asia/Shanghai; cpsession=techelm%3aLS2PeZYIDnH040nX%2c453d0f55f7eded25b929f5076f38b11a; advanced-backend=u23qmcc19kuca7l7ldagc9a5d5; _csrf-backend=6c50c0ac3f9781468964274e29b77dbc0de6c2762e560238571e559036fdc96fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22viyxFuqjA53RB4tJic5tD6MoggwQynEW%22%3B%7D; _identity-backend=697780be6e8862739ab2f03bf20aae5266dd629322a569fd677c901b65b75e7aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22oCyxtVUs6nQzojDAe2Y_cntLtzPUZe-4%22%2C2592000%5D%22%3B%7D',
+    'HTTP_HOST' => 'techelm2012.firstcomdemolinks.com',
+    'HTTP_REFERER' => 'http://techelm2012.firstcomdemolinks.com/system/?r=user-group',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+    'PATH' => '/bin:/usr/bin',
+    'PHP_AUTH_PW' => 'opendemolink88',
+    'PHP_AUTH_USER' => 'firstcom',
+    'QUERY_STRING' => 'r=projectjob-piss-tasks',
+    'REDIRECT_QUERY_STRING' => 'r=projectjob-piss-tasks',
+    'REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'WS4dqyq5@c0hb8p1rwaydQAAAMA',
+    'REDIRECT_URL' => '/system/',
+    'REMOTE_ADDR' => '203.190.77.198',
+    'REMOTE_PORT' => '30939',
+    'REMOTE_USER' => 'firstcom',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_SCHEME' => 'http',
+    'REQUEST_URI' => '/system/?r=projectjob-piss-tasks',
+    'SCRIPT_FILENAME' => '/home/techelm/public_html/system/backend/web/index.php',
+    'SCRIPT_NAME' => '/system/backend/web/index.php',
+    'SERVER_ADDR' => '103.15.232.50',
+    'SERVER_ADMIN' => 'webmaster@techelm2012.firstcomdemolinks.com',
+    'SERVER_NAME' => 'techelm2012.firstcomdemolinks.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'TZ' => 'Etc/GMT-8',
+    'UNIQUE_ID' => 'WS4dqyq5@c0hb8p1rwaydQAAAMA',
+    'PHP_SELF' => '/system/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1496194475.15954494476318359375,
+    'REQUEST_TIME' => 1496194475,
+    'argv' => [
+        'r=projectjob-piss-tasks',
+    ],
+    'argc' => 1,
+]
+[31-May-2017 09:34:55 Asia/Singapore] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\base\View::{closure}() does not exist' in /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\base\\View', '{closure}')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\base\\View::...')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\base\\View', '{closure}', Array, 4)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\UnknownPropertyException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\UnknownPropertyException))
+#13 {main}
+Previous exception:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: common\models\ProjectjobIpiTasks::active' in /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Component.php:147
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('active')
+#1 /home/techelm/public_html/system/backend/views/projectjob-ipi-tasks/index.php(58): yii\db\BaseActiveRecord->__get('active')
+#2 [internal function]: yii\base\View->{closure}(Object(common\models\ProjectjobIpiTasks), 3, 0, Object(yii\grid\DataColumn))
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(213): call_user_func(Object(Closure), Object(common\models\ProjectjobIpiTasks), 3, 0, Object(yii\grid\DataColumn))
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(227): yii\grid\DataColumn->getDataCellValue(Object(common\models\ProjectjobIpiTasks), 3, 0)
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/Column.php(110): yii\grid\DataColumn->renderDataCellContent(Object(common\models\ProjectjobIpiTasks), 3, 0)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(507): yii\grid\Column->renderDataCell(Object(common\models\ProjectjobIpiTasks), 3, 0)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(476): yii\grid\GridView->renderTableRow(Object(common\models\ProjectjobIpiTasks), 3, 0)
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(347): yii\grid\GridView->renderTableBody()
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(155): yii\grid\GridView->renderItems()
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('{items}')
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#14 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#15 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#16 /home/techelm/public_html/system/backend/views/projectjob-ipi-tasks/index.php(70): yii\base\Widget::widget(Array)
+#17 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#18 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#19 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/techelm/p...', Array, Object(backend\controllers\ProjectjobIpiTasksController))
+#20 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\ProjectjobIpiTasksController))
+#21 /home/techelm/public_html/system/backend/controllers/ProjectjobIpiTasksController.php(46): yii\base\Controller->render('index', Array)
+#22 [internal function]: backend\controllers\ProjectjobIpiTasksController->actionIndex()
+#23 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#25 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('', Array)
+#26 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('projectjob-ipi-...', Array)
+#27 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/techelm/public_html/system/backend/web/index.php(17): yii\base\Application->run()
+#29 {main}
+$_SERVER = [
+    'AUTH_TYPE' => 'Basic',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'CONTEXT_PREFIX' => '',
+    'DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => 'timezone=Asia/Shanghai; cpsession=techelm%3aLS2PeZYIDnH040nX%2c453d0f55f7eded25b929f5076f38b11a; advanced-backend=u23qmcc19kuca7l7ldagc9a5d5; _csrf-backend=6c50c0ac3f9781468964274e29b77dbc0de6c2762e560238571e559036fdc96fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22viyxFuqjA53RB4tJic5tD6MoggwQynEW%22%3B%7D; _identity-backend=697780be6e8862739ab2f03bf20aae5266dd629322a569fd677c901b65b75e7aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22oCyxtVUs6nQzojDAe2Y_cntLtzPUZe-4%22%2C2592000%5D%22%3B%7D',
+    'HTTP_HOST' => 'techelm2012.firstcomdemolinks.com',
+    'HTTP_REFERER' => 'http://techelm2012.firstcomdemolinks.com/system/?r=projectjob-piss-tasks',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+    'PATH' => '/bin:/usr/bin',
+    'PHP_AUTH_PW' => 'opendemolink88',
+    'PHP_AUTH_USER' => 'firstcom',
+    'QUERY_STRING' => 'r=projectjob-ipi-tasks',
+    'REDIRECT_QUERY_STRING' => 'r=projectjob-ipi-tasks',
+    'REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'WS4dvkqrWA0Gv3x7NgjFjAAAAQ0',
+    'REDIRECT_URL' => '/system/',
+    'REMOTE_ADDR' => '203.190.77.198',
+    'REMOTE_PORT' => '24279',
+    'REMOTE_USER' => 'firstcom',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_SCHEME' => 'http',
+    'REQUEST_URI' => '/system/?r=projectjob-ipi-tasks',
+    'SCRIPT_FILENAME' => '/home/techelm/public_html/system/backend/web/index.php',
+    'SCRIPT_NAME' => '/system/backend/web/index.php',
+    'SERVER_ADDR' => '103.15.232.50',
+    'SERVER_ADMIN' => 'webmaster@techelm2012.firstcomdemolinks.com',
+    'SERVER_NAME' => 'techelm2012.firstcomdemolinks.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'TZ' => 'Etc/GMT-8',
+    'UNIQUE_ID' => 'WS4dvkqrWA0Gv3x7NgjFjAAAAQ0',
+    'PHP_SELF' => '/system/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1496194494.9749419689178466796875,
+    'REQUEST_TIME' => 1496194494,
+    'argv' => [
+        'r=projectjob-ipi-tasks',
+    ],
+    'argc' => 1,
+]
+[14-Jun-2017 18:51:19 Asia/Singapore] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/ActiveField.php on line 859
+[14-Jun-2017 18:51:51 Asia/Singapore] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/ActiveField.php on line 859
+[14-Jun-2017 18:55:34 Asia/Singapore] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/ActiveField.php on line 859
+[14-Jun-2017 18:55:46 Asia/Singapore] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/ActiveField.php on line 859
+[14-Jun-2017 18:56:55 Asia/Singapore] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/ActiveField.php on line 859
+[14-Jun-2017 20:01:11 Asia/Singapore] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/ActiveField.php on line 859
+[14-Jun-2017 20:03:52 Asia/Singapore] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/ActiveField.php on line 859
+[15-Jun-2017 09:44:12 Asia/Singapore] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 13)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\UnknownPropertyException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\UnknownPropertyException))
+#13 {main}
+Previous exception:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: common\models\User::name' in /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Component.php:147
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('name')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(209): yii\db\BaseActiveRecord->__get('name')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(211): yii\helpers\BaseArrayHelper::getValue(Object(common\models\Servicejob), 'user.name')
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(227): yii\grid\DataColumn->getDataCellValue(Object(common\models\Servicejob), 120, 0)
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/Column.php(110): yii\grid\DataColumn->renderDataCellContent(Object(common\models\Servicejob), 120, 0)
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(507): yii\grid\Column->renderDataCell(Object(common\models\Servicejob), 120, 0)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(476): yii\grid\GridView->renderTableRow(Object(common\models\Servicejob), 120, 0)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(347): yii\grid\GridView->renderTableBody()
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(155): yii\grid\GridView->renderItems()
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('{items}')
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('{items}')
+#11 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#12 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#13 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#14 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#15 /home/techelm/public_html/system/backend/views/servicejob/index.php(98): yii\base\Widget::widget(Array)
+#16 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#17 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#18 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/techelm/p...', Array, Object(backend\controllers\ServicejobController))
+#19 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\ServicejobController))
+#20 /home/techelm/public_html/system/backend/controllers/ServicejobController.php(54): yii\base\Controller->render('index', Array)
+#21 [internal function]: backend\controllers\ServicejobController->actionIndex()
+#22 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#23 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#24 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('', Array)
+#25 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('servicejob', Array)
+#26 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#27 /home/techelm/public_html/system/backend/web/index.php(17): yii\base\Application->run()
+#28 {main}
+$_SERVER = [
+    'AUTH_TYPE' => 'Basic',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'CONTEXT_PREFIX' => '',
+    'DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => 'timezone=Asia/Shanghai; cpsession=techelm%3aDuMHs_Nj4S8fJBUb%2c746fcaa822c61cd6e2177c641bf125f1; _csrf-backend=5ed2c0f3eb450390872696fcb5cd41aaceada524d64d6f714b65ec03c5616d20a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22p31cHW19FEAc6iiF-q4RYjFRQUZOS1SE%22%3B%7D; advanced-backend=2fb2rkldj6p3bvs960o9rpgcs5',
+    'HTTP_HOST' => 'techelm2012.firstcomdemolinks.com',
+    'HTTP_REFERER' => 'http://techelm2012.firstcomdemolinks.com/system/backend/web/index.php?r=servicejob%2Fupdate&id=118',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+    'PATH' => '/bin:/usr/bin',
+    'PHP_AUTH_PW' => 'opendemolink88',
+    'PHP_AUTH_USER' => 'firstcom',
+    'QUERY_STRING' => 'r=servicejob',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '118.189.121.2',
+    'REMOTE_PORT' => '50020',
+    'REMOTE_USER' => 'firstcom',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_SCHEME' => 'http',
+    'REQUEST_URI' => '/system/backend/web/index.php?r=servicejob',
+    'SCRIPT_FILENAME' => '/home/techelm/public_html/system/backend/web/index.php',
+    'SCRIPT_NAME' => '/system/backend/web/index.php',
+    'SERVER_ADDR' => '103.15.232.50',
+    'SERVER_ADMIN' => 'webmaster@techelm2012.firstcomdemolinks.com',
+    'SERVER_NAME' => 'techelm2012.firstcomdemolinks.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'TZ' => 'Etc/GMT-8',
+    'UNIQUE_ID' => 'WUHmbIei2P3WGMXbWfgT5wAAAUU',
+    'PHP_SELF' => '/system/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1497491052.5984699726104736328125,
+    'REQUEST_TIME' => 1497491052,
+    'argv' => [
+        'r=servicejob',
+    ],
+    'argc' => 1,
+]
+[15-Jun-2017 09:47:50 Asia/Singapore] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 14)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\UnknownPropertyException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\UnknownPropertyException))
+#13 {main}
+Previous exception:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: common\models\Servicejob::customer' in /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Component.php:147
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('customer')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(209): yii\db\BaseActiveRecord->__get('customer')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(202): yii\helpers\BaseArrayHelper::getValue(Object(common\models\Servicejob), 'customer', NULL)
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(211): yii\helpers\BaseArrayHelper::getValue(Object(common\models\Servicejob), 'customer.fullna...')
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(227): yii\grid\DataColumn->getDataCellValue(Object(common\models\Servicejob), 121, 0)
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/Column.php(110): yii\grid\DataColumn->renderDataCellContent(Object(common\models\Servicejob), 121, 0)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(507): yii\grid\Column->renderDataCell(Object(common\models\Servicejob), 121, 0)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(476): yii\grid\GridView->renderTableRow(Object(common\models\Servicejob), 121, 0)
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(347): yii\grid\GridView->renderTableBody()
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(155): yii\grid\GridView->renderItems()
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('{items}')
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#14 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#15 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#16 /home/techelm/public_html/system/backend/views/servicejob/index.php(105): yii\base\Widget::widget(Array)
+#17 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#18 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#19 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/techelm/p...', Array, Object(backend\controllers\ServicejobController))
+#20 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\ServicejobController))
+#21 /home/techelm/public_html/system/backend/controllers/ServicejobController.php(54): yii\base\Controller->render('index', Array)
+#22 [internal function]: backend\controllers\ServicejobController->actionIndex()
+#23 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#25 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#26 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('servicejob/inde...', Array)
+#27 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/techelm/public_html/system/backend/web/index.php(17): yii\base\Application->run()
+#29 {main}
+$_SERVER = [
+    'AUTH_TYPE' => 'Basic',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'CONTEXT_PREFIX' => '',
+    'DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => 'timezone=Asia/Shanghai; cpsession=techelm%3aDuMHs_Nj4S8fJBUb%2c746fcaa822c61cd6e2177c641bf125f1; _csrf-backend=5ed2c0f3eb450390872696fcb5cd41aaceada524d64d6f714b65ec03c5616d20a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22p31cHW19FEAc6iiF-q4RYjFRQUZOS1SE%22%3B%7D; advanced-backend=2fb2rkldj6p3bvs960o9rpgcs5',
+    'HTTP_HOST' => 'techelm2012.firstcomdemolinks.com',
+    'HTTP_REFERER' => 'http://techelm2012.firstcomdemolinks.com/system/backend/web/index.php?r=servicejob%2Fupdate&id=120',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+    'PATH' => '/bin:/usr/bin',
+    'PHP_AUTH_PW' => 'opendemolink88',
+    'PHP_AUTH_USER' => 'firstcom',
+    'QUERY_STRING' => 'r=servicejob%2Findex',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '118.189.121.2',
+    'REMOTE_PORT' => '50285',
+    'REMOTE_USER' => 'firstcom',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_SCHEME' => 'http',
+    'REQUEST_URI' => '/system/backend/web/index.php?r=servicejob%2Findex',
+    'SCRIPT_FILENAME' => '/home/techelm/public_html/system/backend/web/index.php',
+    'SCRIPT_NAME' => '/system/backend/web/index.php',
+    'SERVER_ADDR' => '103.15.232.50',
+    'SERVER_ADMIN' => 'webmaster@techelm2012.firstcomdemolinks.com',
+    'SERVER_NAME' => 'techelm2012.firstcomdemolinks.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'TZ' => 'Etc/GMT-8',
+    'UNIQUE_ID' => 'WUHnRZi7zWfqDyiBA2dc9QAAAEg',
+    'PHP_SELF' => '/system/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1497491269.8877398967742919921875,
+    'REQUEST_TIME' => 1497491269,
+    'argv' => [
+        'r=servicejob%2Findex',
+    ],
+    'argc' => 1,
+]
+[15-Jun-2017 09:47:50 Asia/Singapore] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 14)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\UnknownPropertyException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\UnknownPropertyException))
+#13 {main}
+Previous exception:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: common\models\Servicejob::customer' in /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Component.php:147
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('customer')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(209): yii\db\BaseActiveRecord->__get('customer')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(202): yii\helpers\BaseArrayHelper::getValue(Object(common\models\Servicejob), 'customer', NULL)
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(211): yii\helpers\BaseArrayHelper::getValue(Object(common\models\Servicejob), 'customer.fullna...')
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(227): yii\grid\DataColumn->getDataCellValue(Object(common\models\Servicejob), 121, 0)
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/Column.php(110): yii\grid\DataColumn->renderDataCellContent(Object(common\models\Servicejob), 121, 0)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(507): yii\grid\Column->renderDataCell(Object(common\models\Servicejob), 121, 0)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(476): yii\grid\GridView->renderTableRow(Object(common\models\Servicejob), 121, 0)
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(347): yii\grid\GridView->renderTableBody()
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(155): yii\grid\GridView->renderItems()
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('{items}')
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#14 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#15 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#16 /home/techelm/public_html/system/backend/views/servicejob/index.php(105): yii\base\Widget::widget(Array)
+#17 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#18 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#19 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/techelm/p...', Array, Object(backend\controllers\ServicejobController))
+#20 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\ServicejobController))
+#21 /home/techelm/public_html/system/backend/controllers/ServicejobController.php(54): yii\base\Controller->render('index', Array)
+#22 [internal function]: backend\controllers\ServicejobController->actionIndex()
+#23 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#25 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#26 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('servicejob/inde...', Array)
+#27 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/techelm/public_html/system/backend/web/index.php(17): yii\base\Application->run()
+#29 {main}
+$_SERVER = [
+    'AUTH_TYPE' => 'Basic',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'CONTEXT_PREFIX' => '',
+    'DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => 'timezone=Asia/Shanghai; cpsession=techelm%3aDuMHs_Nj4S8fJBUb%2c746fcaa822c61cd6e2177c641bf125f1; _csrf-backend=5ed2c0f3eb450390872696fcb5cd41aaceada524d64d6f714b65ec03c5616d20a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22p31cHW19FEAc6iiF-q4RYjFRQUZOS1SE%22%3B%7D; advanced-backend=2fb2rkldj6p3bvs960o9rpgcs5',
+    'HTTP_HOST' => 'techelm2012.firstcomdemolinks.com',
+    'HTTP_REFERER' => 'http://techelm2012.firstcomdemolinks.com/system/backend/web/index.php?r=servicejob%2Fupdate&id=120',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+    'PATH' => '/bin:/usr/bin',
+    'PHP_AUTH_PW' => 'opendemolink88',
+    'PHP_AUTH_USER' => 'firstcom',
+    'QUERY_STRING' => 'r=servicejob%2Findex',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '118.189.121.2',
+    'REMOTE_PORT' => '50288',
+    'REMOTE_USER' => 'firstcom',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_SCHEME' => 'http',
+    'REQUEST_URI' => '/system/backend/web/index.php?r=servicejob%2Findex',
+    'SCRIPT_FILENAME' => '/home/techelm/public_html/system/backend/web/index.php',
+    'SCRIPT_NAME' => '/system/backend/web/index.php',
+    'SERVER_ADDR' => '103.15.232.50',
+    'SERVER_ADMIN' => 'webmaster@techelm2012.firstcomdemolinks.com',
+    'SERVER_NAME' => 'techelm2012.firstcomdemolinks.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'TZ' => 'Etc/GMT-8',
+    'UNIQUE_ID' => 'WUHnRiXh6jOruCceJ6KhSgAAAc0',
+    'PHP_SELF' => '/system/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1497491270.7393019199371337890625,
+    'REQUEST_TIME' => 1497491270,
+    'argv' => [
+        'r=servicejob%2Findex',
+    ],
+    'argc' => 1,
+]
+[15-Jun-2017 09:49:27 Asia/Singapore] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/ActiveField.php on line 859
+[15-Jun-2017 09:50:31 Asia/Singapore] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/ActiveField.php on line 859
+[15-Jun-2017 09:51:34 Asia/Singapore] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/ActiveField.php on line 859
+[15-Jun-2017 09:52:52 Asia/Singapore] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/ActiveField.php on line 859
+[15-Jun-2017 09:54:42 Asia/Singapore] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 14)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\UnknownPropertyException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\UnknownPropertyException))
+#13 {main}
+Previous exception:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: common\models\Service::service_category' in /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Component.php:147
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('service_categor...')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(209): yii\db\BaseActiveRecord->__get('service_categor...')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(202): yii\helpers\BaseArrayHelper::getValue(Object(common\models\Service), 'service_categor...', NULL)
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(211): yii\helpers\BaseArrayHelper::getValue(Object(common\models\Service), 'service_categor...')
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(227): yii\grid\DataColumn->getDataCellValue(Object(common\models\Service), 3, 0)
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/Column.php(110): yii\grid\DataColumn->renderDataCellContent(Object(common\models\Service), 3, 0)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(507): yii\grid\Column->renderDataCell(Object(common\models\Service), 3, 0)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(476): yii\grid\GridView->renderTableRow(Object(common\models\Service), 3, 0)
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(347): yii\grid\GridView->renderTableBody()
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(155): yii\grid\GridView->renderItems()
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('{items}')
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#14 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#15 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#16 /home/techelm/public_html/system/backend/views/service/index.php(59): yii\base\Widget::widget(Array)
+#17 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#18 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#19 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/techelm/p...', Array, Object(backend\controllers\ServiceController))
+#20 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\ServiceController))
+#21 /home/techelm/public_html/system/backend/controllers/ServiceController.php(44): yii\base\Controller->render('index', Array)
+#22 [internal function]: backend\controllers\ServiceController->actionIndex()
+#23 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#25 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#26 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('service/index', Array)
+#27 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/techelm/public_html/system/backend/web/index.php(17): yii\base\Application->run()
+#29 {main}
+$_SERVER = [
+    'AUTH_TYPE' => 'Basic',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'CONTEXT_PREFIX' => '',
+    'DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => 'timezone=Asia/Shanghai; cpsession=techelm%3aDuMHs_Nj4S8fJBUb%2c746fcaa822c61cd6e2177c641bf125f1; _csrf-backend=5ed2c0f3eb450390872696fcb5cd41aaceada524d64d6f714b65ec03c5616d20a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22p31cHW19FEAc6iiF-q4RYjFRQUZOS1SE%22%3B%7D; advanced-backend=2fb2rkldj6p3bvs960o9rpgcs5',
+    'HTTP_HOST' => 'techelm2012.firstcomdemolinks.com',
+    'HTTP_REFERER' => 'http://techelm2012.firstcomdemolinks.com/system/backend/web/index.php?r=service',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+    'PATH' => '/bin:/usr/bin',
+    'PHP_AUTH_PW' => 'opendemolink88',
+    'PHP_AUTH_USER' => 'firstcom',
+    'QUERY_STRING' => 'r=service%2Findex&sort=service_name',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '118.189.121.2',
+    'REMOTE_PORT' => '50492',
+    'REMOTE_USER' => 'firstcom',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_SCHEME' => 'http',
+    'REQUEST_URI' => '/system/backend/web/index.php?r=service%2Findex&sort=service_name',
+    'SCRIPT_FILENAME' => '/home/techelm/public_html/system/backend/web/index.php',
+    'SCRIPT_NAME' => '/system/backend/web/index.php',
+    'SERVER_ADDR' => '103.15.232.50',
+    'SERVER_ADMIN' => 'webmaster@techelm2012.firstcomdemolinks.com',
+    'SERVER_NAME' => 'techelm2012.firstcomdemolinks.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'TZ' => 'Etc/GMT-8',
+    'UNIQUE_ID' => 'WUHo4ei@Ktqq1A25bl12ywAAAME',
+    'PHP_SELF' => '/system/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1497491681.959455966949462890625,
+    'REQUEST_TIME' => 1497491681,
+    'argv' => [
+        'r=service%2Findex&sort=service_name',
+    ],
+    'argc' => 1,
+]
+[15-Jun-2017 09:54:55 Asia/Singapore] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 14)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\UnknownPropertyException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\UnknownPropertyException))
+#13 {main}
+Previous exception:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: common\models\Service::serviceCategory' in /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Component.php:147
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('serviceCategory')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(209): yii\db\BaseActiveRecord->__get('serviceCategory')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(202): yii\helpers\BaseArrayHelper::getValue(Object(common\models\Service), 'serviceCategory', NULL)
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(211): yii\helpers\BaseArrayHelper::getValue(Object(common\models\Service), 'serviceCategory...')
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(227): yii\grid\DataColumn->getDataCellValue(Object(common\models\Service), 3, 0)
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/Column.php(110): yii\grid\DataColumn->renderDataCellContent(Object(common\models\Service), 3, 0)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(507): yii\grid\Column->renderDataCell(Object(common\models\Service), 3, 0)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(476): yii\grid\GridView->renderTableRow(Object(common\models\Service), 3, 0)
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(347): yii\grid\GridView->renderTableBody()
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(155): yii\grid\GridView->renderItems()
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('{items}')
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#14 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#15 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#16 /home/techelm/public_html/system/backend/views/service/index.php(59): yii\base\Widget::widget(Array)
+#17 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#18 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#19 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/techelm/p...', Array, Object(backend\controllers\ServiceController))
+#20 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\ServiceController))
+#21 /home/techelm/public_html/system/backend/controllers/ServiceController.php(44): yii\base\Controller->render('index', Array)
+#22 [internal function]: backend\controllers\ServiceController->actionIndex()
+#23 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#25 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#26 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('service/index', Array)
+#27 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/techelm/public_html/system/backend/web/index.php(17): yii\base\Application->run()
+#29 {main}
+$_SERVER = [
+    'AUTH_TYPE' => 'Basic',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'CONTEXT_PREFIX' => '',
+    'DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => 'timezone=Asia/Shanghai; cpsession=techelm%3aDuMHs_Nj4S8fJBUb%2c746fcaa822c61cd6e2177c641bf125f1; _csrf-backend=5ed2c0f3eb450390872696fcb5cd41aaceada524d64d6f714b65ec03c5616d20a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22p31cHW19FEAc6iiF-q4RYjFRQUZOS1SE%22%3B%7D; advanced-backend=2fb2rkldj6p3bvs960o9rpgcs5',
+    'HTTP_HOST' => 'techelm2012.firstcomdemolinks.com',
+    'HTTP_REFERER' => 'http://techelm2012.firstcomdemolinks.com/system/backend/web/index.php?r=service',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+    'PATH' => '/bin:/usr/bin',
+    'PHP_AUTH_PW' => 'opendemolink88',
+    'PHP_AUTH_USER' => 'firstcom',
+    'QUERY_STRING' => 'r=service%2Findex&sort=service_name',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '118.189.121.2',
+    'REMOTE_PORT' => '50501',
+    'REMOTE_USER' => 'firstcom',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_SCHEME' => 'http',
+    'REQUEST_URI' => '/system/backend/web/index.php?r=service%2Findex&sort=service_name',
+    'SCRIPT_FILENAME' => '/home/techelm/public_html/system/backend/web/index.php',
+    'SCRIPT_NAME' => '/system/backend/web/index.php',
+    'SERVER_ADDR' => '103.15.232.50',
+    'SERVER_ADMIN' => 'webmaster@techelm2012.firstcomdemolinks.com',
+    'SERVER_NAME' => 'techelm2012.firstcomdemolinks.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'TZ' => 'Etc/GMT-8',
+    'UNIQUE_ID' => 'WUHo7yXh6jOruCceJ6KigQAAAdY',
+    'PHP_SELF' => '/system/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1497491695.28715610504150390625,
+    'REQUEST_TIME' => 1497491695,
+    'argv' => [
+        'r=service%2Findex&sort=service_name',
+    ],
+    'argc' => 1,
+]
+[15-Jun-2017 09:54:56 Asia/Singapore] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 14)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\UnknownPropertyException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\UnknownPropertyException))
+#13 {main}
+Previous exception:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: common\models\Service::serviceCategory' in /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Component.php:147
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('serviceCategory')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(209): yii\db\BaseActiveRecord->__get('serviceCategory')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(202): yii\helpers\BaseArrayHelper::getValue(Object(common\models\Service), 'serviceCategory', NULL)
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(211): yii\helpers\BaseArrayHelper::getValue(Object(common\models\Service), 'serviceCategory...')
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(227): yii\grid\DataColumn->getDataCellValue(Object(common\models\Service), 3, 0)
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/Column.php(110): yii\grid\DataColumn->renderDataCellContent(Object(common\models\Service), 3, 0)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(507): yii\grid\Column->renderDataCell(Object(common\models\Service), 3, 0)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(476): yii\grid\GridView->renderTableRow(Object(common\models\Service), 3, 0)
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(347): yii\grid\GridView->renderTableBody()
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(155): yii\grid\GridView->renderItems()
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('{items}')
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#14 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#15 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#16 /home/techelm/public_html/system/backend/views/service/index.php(59): yii\base\Widget::widget(Array)
+#17 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#18 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#19 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/techelm/p...', Array, Object(backend\controllers\ServiceController))
+#20 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\ServiceController))
+#21 /home/techelm/public_html/system/backend/controllers/ServiceController.php(44): yii\base\Controller->render('index', Array)
+#22 [internal function]: backend\controllers\ServiceController->actionIndex()
+#23 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#25 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('index', Array)
+#26 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('service/index', Array)
+#27 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/techelm/public_html/system/backend/web/index.php(17): yii\base\Application->run()
+#29 {main}
+$_SERVER = [
+    'AUTH_TYPE' => 'Basic',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'CONTEXT_PREFIX' => '',
+    'DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => 'timezone=Asia/Shanghai; cpsession=techelm%3aDuMHs_Nj4S8fJBUb%2c746fcaa822c61cd6e2177c641bf125f1; _csrf-backend=5ed2c0f3eb450390872696fcb5cd41aaceada524d64d6f714b65ec03c5616d20a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22p31cHW19FEAc6iiF-q4RYjFRQUZOS1SE%22%3B%7D; advanced-backend=2fb2rkldj6p3bvs960o9rpgcs5',
+    'HTTP_HOST' => 'techelm2012.firstcomdemolinks.com',
+    'HTTP_REFERER' => 'http://techelm2012.firstcomdemolinks.com/system/backend/web/index.php?r=service',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+    'PATH' => '/bin:/usr/bin',
+    'PHP_AUTH_PW' => 'opendemolink88',
+    'PHP_AUTH_USER' => 'firstcom',
+    'QUERY_STRING' => 'r=service%2Findex&sort=service_name',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '118.189.121.2',
+    'REMOTE_PORT' => '50502',
+    'REMOTE_USER' => 'firstcom',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_SCHEME' => 'http',
+    'REQUEST_URI' => '/system/backend/web/index.php?r=service%2Findex&sort=service_name',
+    'SCRIPT_FILENAME' => '/home/techelm/public_html/system/backend/web/index.php',
+    'SCRIPT_NAME' => '/system/backend/web/index.php',
+    'SERVER_ADDR' => '103.15.232.50',
+    'SERVER_ADMIN' => 'webmaster@techelm2012.firstcomdemolinks.com',
+    'SERVER_NAME' => 'techelm2012.firstcomdemolinks.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'TZ' => 'Etc/GMT-8',
+    'UNIQUE_ID' => 'WUHo8Ji7zWfqDyiBA2dd7gAAAE4',
+    'PHP_SELF' => '/system/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1497491696.2585430145263671875,
+    'REQUEST_TIME' => 1497491696,
+    'argv' => [
+        'r=service%2Findex&sort=service_name',
+    ],
+    'argc' => 1,
+]
+[15-Jun-2017 13:29:09 Asia/Singapore] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/ActiveField.php on line 859
+[15-Jun-2017 13:29:22 Asia/Singapore] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/ActiveField.php on line 859
+[15-Jun-2017 13:30:18 Asia/Singapore] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/ActiveField.php on line 859
+[15-Jun-2017 13:31:46 Asia/Singapore] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/ActiveField.php on line 859
+[19-Jun-2017 18:26:46 Asia/Singapore] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 14)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\UnknownPropertyException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\UnknownPropertyException))
+#13 {main}
+Previous exception:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: common\models\User::user_group' in /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Component.php:147
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('user_group')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(209): yii\db\BaseActiveRecord->__get('user_group')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(202): yii\helpers\BaseArrayHelper::getValue(Object(common\models\User), 'user_group', NULL)
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(211): yii\helpers\BaseArrayHelper::getValue(Object(common\models\User), 'user_group.name')
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(227): yii\grid\DataColumn->getDataCellValue(Object(common\models\User), 1, 0)
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/Column.php(110): yii\grid\DataColumn->renderDataCellContent(Object(common\models\User), 1, 0)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(507): yii\grid\Column->renderDataCell(Object(common\models\User), 1, 0)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(476): yii\grid\GridView->renderTableRow(Object(common\models\User), 1, 0)
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(347): yii\grid\GridView->renderTableBody()
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(155): yii\grid\GridView->renderItems()
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('{items}')
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#14 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#15 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#16 /home/techelm/public_html/system/backend/views/user/index.php(58): yii\base\Widget::widget(Array)
+#17 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#18 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#19 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/techelm/p...', Array, Object(backend\controllers\UserController))
+#20 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserController))
+#21 /home/techelm/public_html/system/backend/controllers/UserController.php(47): yii\base\Controller->render('index', Array)
+#22 [internal function]: backend\controllers\UserController->actionIndex()
+#23 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#25 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('', Array)
+#26 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('user', Array)
+#27 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/techelm/public_html/system/backend/web/index.php(17): yii\base\Application->run()
+#29 {main}
+$_SERVER = [
+    'AUTH_TYPE' => 'Basic',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'CONTEXT_PREFIX' => '',
+    'DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => '_csrf-backend=0472e94a447ffcf59270fdbbee6cd83068edfcf6e4cb99ed36cf426a9164227ca%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22yeuzFFRW9o5Jfbid9bjIhtCpCrWNivuL%22%3B%7D; __zlcmid=fngKjw6A0c7X8K; cpsession=closed; timezone=Asia/Shanghai; _ga=GA1.2.1898059181.1492767243; _gid=GA1.2.773101948.1497844303; advanced-backend=h627u21nd13ir6k6jjvnqqroo2; _identity-backend=697780be6e8862739ab2f03bf20aae5266dd629322a569fd677c901b65b75e7aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22oCyxtVUs6nQzojDAe2Y_cntLtzPUZe-4%22%2C2592000%5D%22%3B%7D',
+    'HTTP_HOST' => 'techelm2012.firstcomdemolinks.com',
+    'HTTP_REFERER' => 'http://techelm2012.firstcomdemolinks.com/system/backend/web/index.php?r=user-group',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+    'PATH' => '/bin:/usr/bin',
+    'PHP_AUTH_PW' => 'opendemolink88',
+    'PHP_AUTH_USER' => 'firstcom',
+    'QUERY_STRING' => 'r=user',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '118.189.121.2',
+    'REMOTE_PORT' => '56381',
+    'REMOTE_USER' => 'firstcom',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_SCHEME' => 'http',
+    'REQUEST_URI' => '/system/backend/web/index.php?r=user',
+    'SCRIPT_FILENAME' => '/home/techelm/public_html/system/backend/web/index.php',
+    'SCRIPT_NAME' => '/system/backend/web/index.php',
+    'SERVER_ADDR' => '103.15.232.50',
+    'SERVER_ADMIN' => 'webmaster@techelm2012.firstcomdemolinks.com',
+    'SERVER_NAME' => 'techelm2012.firstcomdemolinks.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'WUem5omTlTMBwLsCFfbrCQAAAQY',
+    'PHP_SELF' => '/system/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1497868006.73701190948486328125,
+    'REQUEST_TIME' => 1497868006,
+    'argv' => [
+        'r=user',
+    ],
+    'argc' => 1,
+]
+[19-Jun-2017 18:26:58 Asia/Singapore] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 14)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\UnknownPropertyException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\UnknownPropertyException))
+#13 {main}
+Previous exception:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: common\models\User::user_group' in /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Component.php:147
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('user_group')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(209): yii\db\BaseActiveRecord->__get('user_group')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(202): yii\helpers\BaseArrayHelper::getValue(Object(common\models\User), 'user_group', NULL)
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(211): yii\helpers\BaseArrayHelper::getValue(Object(common\models\User), 'user_group.name')
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(227): yii\grid\DataColumn->getDataCellValue(Object(common\models\User), 1, 0)
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/Column.php(110): yii\grid\DataColumn->renderDataCellContent(Object(common\models\User), 1, 0)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(507): yii\grid\Column->renderDataCell(Object(common\models\User), 1, 0)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(476): yii\grid\GridView->renderTableRow(Object(common\models\User), 1, 0)
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(347): yii\grid\GridView->renderTableBody()
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(155): yii\grid\GridView->renderItems()
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('{items}')
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#14 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#15 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#16 /home/techelm/public_html/system/backend/views/user/index.php(58): yii\base\Widget::widget(Array)
+#17 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#18 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#19 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/techelm/p...', Array, Object(backend\controllers\UserController))
+#20 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserController))
+#21 /home/techelm/public_html/system/backend/controllers/UserController.php(47): yii\base\Controller->render('index', Array)
+#22 [internal function]: backend\controllers\UserController->actionIndex()
+#23 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#25 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('', Array)
+#26 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('user', Array)
+#27 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/techelm/public_html/system/backend/web/index.php(17): yii\base\Application->run()
+#29 {main}
+$_SERVER = [
+    'AUTH_TYPE' => 'Basic',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'CONTEXT_PREFIX' => '',
+    'DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => '_csrf-backend=0472e94a447ffcf59270fdbbee6cd83068edfcf6e4cb99ed36cf426a9164227ca%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22yeuzFFRW9o5Jfbid9bjIhtCpCrWNivuL%22%3B%7D; __zlcmid=fngKjw6A0c7X8K; cpsession=closed; timezone=Asia/Shanghai; _ga=GA1.2.1898059181.1492767243; _gid=GA1.2.773101948.1497844303; _identity-backend=697780be6e8862739ab2f03bf20aae5266dd629322a569fd677c901b65b75e7aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22oCyxtVUs6nQzojDAe2Y_cntLtzPUZe-4%22%2C2592000%5D%22%3B%7D; advanced-backend=h627u21nd13ir6k6jjvnqqroo2',
+    'HTTP_HOST' => 'techelm2012.firstcomdemolinks.com',
+    'HTTP_REFERER' => 'http://techelm2012.firstcomdemolinks.com/system/backend/web/index.php?r=user-group',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+    'PATH' => '/bin:/usr/bin',
+    'PHP_AUTH_PW' => 'opendemolink88',
+    'PHP_AUTH_USER' => 'firstcom',
+    'QUERY_STRING' => 'r=user',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '118.189.121.2',
+    'REMOTE_PORT' => '56384',
+    'REMOTE_USER' => 'firstcom',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_SCHEME' => 'http',
+    'REQUEST_URI' => '/system/backend/web/index.php?r=user',
+    'SCRIPT_FILENAME' => '/home/techelm/public_html/system/backend/web/index.php',
+    'SCRIPT_NAME' => '/system/backend/web/index.php',
+    'SERVER_ADDR' => '103.15.232.50',
+    'SERVER_ADMIN' => 'webmaster@techelm2012.firstcomdemolinks.com',
+    'SERVER_NAME' => 'techelm2012.firstcomdemolinks.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'WUem8pM9K0d9HArG-vNyigAAAEQ',
+    'PHP_SELF' => '/system/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1497868018.6378319263458251953125,
+    'REQUEST_TIME' => 1497868018,
+    'argv' => [
+        'r=user',
+    ],
+    'argc' => 1,
+]
+[19-Jun-2017 18:27:13 Asia/Singapore] An Error occurred while handling another error:
+exception 'ReflectionException' with message 'Method yii\widgets\BaseListView::yii\widgets\{closure}() does not exist' in /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php:199
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(199): ReflectionMethod->__construct('yii\\widgets\\Bas...', 'yii\\widgets\\{cl...')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php(26): yii\web\ErrorHandler->addTypeLinks('yii\\widgets\\Bas...')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(308): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/views/errorHandler/exception.php(385): yii\web\ErrorHandler->renderCallStackItem(NULL, NULL, 'yii\\widgets\\Bas...', 'yii\\widgets\\{cl...', Array, 14)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(253): yii\base\View->renderFile('@yii/views/erro...', Array, Object(yii\web\ErrorHandler))
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/ErrorHandler.php(114): yii\web\ErrorHandler->renderFile('@yii/views/erro...', Array)
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\UnknownPropertyException))
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\UnknownPropertyException))
+#13 {main}
+Previous exception:
+exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: common\models\User::user_group' in /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Component.php:147
+Stack trace:
+#0 /home/techelm/public_html/system/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('user_group')
+#1 /home/techelm/public_html/system/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(209): yii\db\BaseActiveRecord->__get('user_group')
+#2 /home/techelm/public_html/system/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(202): yii\helpers\BaseArrayHelper::getValue(Object(common\models\User), 'user_group', NULL)
+#3 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(211): yii\helpers\BaseArrayHelper::getValue(Object(common\models\User), 'user_group.name')
+#4 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/DataColumn.php(227): yii\grid\DataColumn->getDataCellValue(Object(common\models\User), 1, 0)
+#5 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/Column.php(110): yii\grid\DataColumn->renderDataCellContent(Object(common\models\User), 1, 0)
+#6 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(507): yii\grid\Column->renderDataCell(Object(common\models\User), 1, 0)
+#7 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(476): yii\grid\GridView->renderTableRow(Object(common\models\User), 1, 0)
+#8 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(347): yii\grid\GridView->renderTableBody()
+#9 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(155): yii\grid\GridView->renderItems()
+#10 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(316): yii\widgets\BaseListView->renderSection('{items}')
+#11 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(130): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 /home/techelm/public_html/system/vendor/yiisoft/yii2/widgets/BaseListView.php(133): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#14 /home/techelm/public_html/system/vendor/yiisoft/yii2/grid/GridView.php(291): yii\widgets\BaseListView->run()
+#15 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Widget.php(139): yii\grid\GridView->run()
+#16 /home/techelm/public_html/system/backend/views/user/index.php(58): yii\base\Widget::widget(Array)
+#17 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(328): require('/home/techelm/p...')
+#18 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile('/home/techelm/p...', Array)
+#19 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/home/techelm/p...', Array, Object(backend\controllers\UserController))
+#20 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\UserController))
+#21 /home/techelm/public_html/system/backend/controllers/UserController.php(47): yii\base\Controller->render('index', Array)
+#22 [internal function]: backend\controllers\UserController->actionIndex()
+#23 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#24 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#25 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('', Array)
+#26 /home/techelm/public_html/system/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('user', Array)
+#27 /home/techelm/public_html/system/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/techelm/public_html/system/backend/web/index.php(17): yii\base\Application->run()
+#29 {main}
+$_SERVER = [
+    'AUTH_TYPE' => 'Basic',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'CONTEXT_PREFIX' => '',
+    'DOCUMENT_ROOT' => '/home/techelm/public_html',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => '_csrf-backend=0472e94a447ffcf59270fdbbee6cd83068edfcf6e4cb99ed36cf426a9164227ca%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22yeuzFFRW9o5Jfbid9bjIhtCpCrWNivuL%22%3B%7D; __zlcmid=fngKjw6A0c7X8K; cpsession=closed; timezone=Asia/Shanghai; _ga=GA1.2.1898059181.1492767243; _gid=GA1.2.773101948.1497844303; _identity-backend=697780be6e8862739ab2f03bf20aae5266dd629322a569fd677c901b65b75e7aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22oCyxtVUs6nQzojDAe2Y_cntLtzPUZe-4%22%2C2592000%5D%22%3B%7D; advanced-backend=h627u21nd13ir6k6jjvnqqroo2',
+    'HTTP_HOST' => 'techelm2012.firstcomdemolinks.com',
+    'HTTP_REFERER' => 'http://techelm2012.firstcomdemolinks.com/system/backend/web/index.php?r=user-group',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+    'PATH' => '/bin:/usr/bin',
+    'PHP_AUTH_PW' => 'opendemolink88',
+    'PHP_AUTH_USER' => 'firstcom',
+    'QUERY_STRING' => 'r=user',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '118.189.121.2',
+    'REMOTE_PORT' => '56385',
+    'REMOTE_USER' => 'firstcom',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_SCHEME' => 'http',
+    'REQUEST_URI' => '/system/backend/web/index.php?r=user',
+    'SCRIPT_FILENAME' => '/home/techelm/public_html/system/backend/web/index.php',
+    'SCRIPT_NAME' => '/system/backend/web/index.php',
+    'SERVER_ADDR' => '103.15.232.50',
+    'SERVER_ADMIN' => 'webmaster@techelm2012.firstcomdemolinks.com',
+    'SERVER_NAME' => 'techelm2012.firstcomdemolinks.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'UNIQUE_ID' => 'WUenAcsBBOzzLinhRhczogAAABQ',
+    'PHP_SELF' => '/system/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1497868033.1383860111236572265625,
+    'REQUEST_TIME' => 1497868033,
+    'argv' => [
+        'r=user',
+    ],
+    'argc' => 1,
+]
+[21-Jun-2017 14:19:15 Asia/Singapore] PHP Fatal error:  Class 'backend\controllers\UserPermission' not found in /home/techelm/public_html/system/backend/controllers/UserController.php on line 41
+[21-Jun-2017 14:19:32 Asia/Singapore] PHP Fatal error:  Class 'backend\controllers\AccessControl' not found in /home/techelm/public_html/system/backend/controllers/UserController.php on line 57
+[21-Jun-2017 14:31:44 Asia/Singapore] PHP Fatal error:  Class 'backend\controllers\ArrayHelper' not found in /home/techelm/public_html/system/backend/controllers/UserGroupController.php on line 38
+[21-Jun-2017 14:33:52 Asia/Singapore] PHP Fatal error:  Class 'backend\controllers\ArrayHelper' not found in /home/techelm/public_html/system/backend/controllers/UserPermissionController.php on line 34
+[21-Jun-2017 14:34:05 Asia/Singapore] PHP Fatal error:  Cannot use common\models\UserPermission as UserPermission because the name is already in use in /home/techelm/public_html/system/backend/controllers/UserPermissionController.php on line 16
+[21-Jun-2017 14:34:06 Asia/Singapore] PHP Fatal error:  Cannot use common\models\UserPermission as UserPermission because the name is already in use in /home/techelm/public_html/system/backend/controllers/UserPermissionController.php on line 16
+[21-Jun-2017 14:41:44 Asia/Singapore] PHP Fatal error:  Call to undefined function backend\controllers\d() in /home/techelm/public_html/system/backend/controllers/UserPermissionController.php on line 249
+[21-Jun-2017 16:03:30 Asia/Singapore] PHP Fatal error:  Call to a member function getRole() on a non-object in /home/techelm/public_html/system/backend/controllers/UserController.php on line 135
+[21-Jun-2017 16:15:02 Asia/Singapore] PHP Fatal error:  Call to a member function getRole() on a non-object in /home/techelm/public_html/system/backend/controllers/UserController.php on line 135
+[21-Jun-2017 16:16:58 Asia/Singapore] PHP Fatal error:  Call to a member function getRole() on a non-object in /home/techelm/public_html/system/backend/controllers/UserController.php on line 135
+[21-Jun-2017 16:28:10 Asia/Singapore] PHP Fatal error:  Class 'backend\controllers\ArrayHelper' not found in /home/techelm/public_html/system/backend/controllers/CustomerController.php on line 22
+[21-Jun-2017 16:28:25 Asia/Singapore] PHP Fatal error:  Class 'backend\controllers\UserGroup' not found in /home/techelm/public_html/system/backend/controllers/CustomerController.php on line 24
+[22-Jun-2017 10:58:56 Asia/Singapore] PHP Fatal error:  Class 'common\models\SearchServicejobCategories' not found in /home/techelm/public_html/system/backend/controllers/ServicejobCategoriesController.php on line 38
+[22-Jun-2017 11:10:08 Asia/Singapore] PHP Fatal error:  Class 'common\models\ServicejobCategory' not found in /home/techelm/public_html/system/common/models/ServicejobComplaintFault.php on line 54
+[22-Jun-2017 11:12:52 Asia/Singapore] PHP Fatal error:  Class 'ServicejobCategories' not found in /home/techelm/public_html/system/backend/views/servicejob-complaint-fault/view.php on line 39

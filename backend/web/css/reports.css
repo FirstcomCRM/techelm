@@ -1,0 +1,20 @@
+.wrapper{
+  font-size: 20px;
+  font-family: Tahoma, sans-serif;
+}
+
+.dataprovider-table{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.dataprovider-table th{
+  text-align: left;border-bottom: 2px solid #333;padding: 4px
+}
+
+.dataprovider-row{
+  width:10%;
+  padding: 5px;
+  border-top: 1px solid #444;
+}
