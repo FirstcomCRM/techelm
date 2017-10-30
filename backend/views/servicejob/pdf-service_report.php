@@ -375,7 +375,7 @@ if($image == '/'){
               <th class="td-acknowledge">Customer Acknowledgement</th>
               <th>Techelm Technologies Pte Ltd </th>
             </tr>
-
+          </thead>
             <tr>
                 <td><br> <span style="verti">Signature &emsp;   :</span>
                   <?php if (!empty($model->signature_customer_name)): ?>
@@ -429,7 +429,7 @@ if($image == '/'){
                   <?php endif; ?>
                 </td>
             </tr>
-          </thead>
+
         </table>
       </div>
 
