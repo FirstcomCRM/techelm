@@ -473,7 +473,7 @@ $userGroupArray = ArrayHelper::map(UserGroup::find()->all(), 'id', 'name');
       if (!defined('GOOGLE_GCM_URLS')) {
           define("GOOGLE_GCM_URLS", "https://fcm.googleapis.com/fcm/send");
       }
-    //  define("GOOGLE_API_KEYS", "AIzaSyAxewEiK97rX2fGNZ-USeIxWujL68uA78Y"); // Techelm Mobile
+    //  define("GOOGLE_API_KEYS", "AIzaSyAxewEiK97rX2fGNZ-USeIxWujL68201uKY"); // Techelm Mobile, ask richard for correct api key
     //  define("GOOGLE_GCM_URLS", "https://fcm.googleapis.com/fcm/send");
 
       $data = array(
