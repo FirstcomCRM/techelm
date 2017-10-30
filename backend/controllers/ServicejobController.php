@@ -675,7 +675,7 @@ class ServicejobController extends Controller
     }
 
     protected function send($reg_id, $message, $img_url, $tag, $user_id,$id){
-      define("GOOGLE_API_KEY", "AIzaSyAxewEiK97rX2fGNZ-USeIxWujL68uA78Y"); // Techelm Mobile
+      define("GOOGLE_API_KEY", "AIzaSyAxewEiK97rX2fGNZ-USeIxWujL628u017Y"); // Techelm Mobile, ask richard for correct api key
       define("GOOGLE_GCM_URL", "https://fcm.googleapis.com/fcm/send");
 
       $data = array(
