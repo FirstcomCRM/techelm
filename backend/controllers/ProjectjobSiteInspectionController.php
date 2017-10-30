@@ -12,6 +12,7 @@ use common\models\Company;
 use common\models\UserGroup;
 use common\models\UserPermission;
 use common\models\User;
+use common\models\ProjectjobIpiTasksAction;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -27,14 +28,44 @@ class ProjectjobSiteInspectionController extends Controller
      */
     public function behaviors()
     {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
+      $userGroupArray = ArrayHelper::map(UserGroup::find()->all(), 'id', 'name');
+
+            foreach ( $userGroupArray as $uGId => $uGName ){
+                $permission = UserPermission::find()->where(['controller' => 'ProjectjobSiteInspection'])->andWhere(['user_group_id' => $uGId ] )->all();
+                $actionArray = [];
+                foreach ( $permission as $p )  {
+                    $actionArray[] = $p->action;
+                }
+
+                $allow[$uGName] = false;
+                $action[$uGName] = $actionArray;
+                if ( ! empty( $action[$uGName] ) ) {
+                    $allow[$uGName] = true;
+                }
+
+            }
+            $usergroup_id = User::find()->where(['id'=>Yii::$app->user->id])->one();
+            $groupname = UserGroup::find()->where(['id'=>$usergroup_id->user_group_id])->one();
+            return [
+                'access' => [
+                    'class' => AccessControl::className(),
+                    'only' => ['index', 'create', 'update', 'view', 'delete'],
+                    'rules' => [
+                            [
+                                'actions' => $action[$groupname->name],
+                                'allow' => $allow[$groupname->name],
+                                'roles' => [$groupname->name],
+                            ],
+                          ],
+
                 ],
-            ],
-        ];
+                'verbs' => [
+                    'class' => VerbFilter::className(),
+                    'actions' => [
+                        'logout' => ['post'],
+                    ],
+                ],
+            ];
     }
 
     /**
@@ -76,6 +107,17 @@ class ProjectjobSiteInspectionController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->validate() ) {
             $model->date_created = date('Y-m-d H:s:i');
             $model->save();
+            $tasks =ProjectjobIpiTasksAction::find()->all();
+            foreach ($tasks as $key => $value) {
+                $data = new ProjectjobIpiTasks();
+                $data->description = $value->task_action;
+                $data->form_type = $model->field_type;
+                $data->date_created = date('Y-m-d H:i:s');
+                $data->created_by = Yii::$app->user->id;
+                $data->serial_no = $model->id; //edr, this is temporary
+                $data->save(false);
+            }
+            Yii::$app->session->setFlash('success', "Site in-process created");
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -94,7 +136,11 @@ class ProjectjobSiteInspectionController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $model->validate() ) {
+            $model->date_created = date('Y-m-d H:s:i');
+            $model->save(false);
+            //edr add update logic, when user is dumb and decided to switch the field type
+            Yii::$app->session->setFlash('success', "Site in-process updated");
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
