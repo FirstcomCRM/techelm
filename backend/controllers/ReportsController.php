@@ -154,7 +154,7 @@ class ReportsController extends Controller
         //print_r($dataProvider);
         //echo '</pre>';
       //  die();
-        return $this->render('b-report', [
+        return $this->render('b-report_bak1', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'x'=>$x,
@@ -172,7 +172,7 @@ class ReportsController extends Controller
       ini_set("memory_limit", "512M");
 
       $mpdf = new mPDF('utf-8','A3');
-      $mpdf->content = $this->renderPartial('b-pdf',[
+      $mpdf->content = $this->renderPartial('b-pdf_bak1',[
         'searchModel'=>$searchModel,
         'dataProvider' => $dataProvider,
       ]);
