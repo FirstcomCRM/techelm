@@ -107,7 +107,7 @@ class ReportsController extends Controller
       ini_set('max_execution_time', 180);
       ini_set("memory_limit", "512M");
 
-      $mpdf = new mPDF('utf-8','A2');
+      $mpdf = new mPDF('utf-8','A4-L');
       $mpdf->content = $this->renderPartial('a-pdf',[
         'searchModel'=>$searchModel,
         'dataProvider' => $dataProvider,
@@ -188,7 +188,7 @@ class ReportsController extends Controller
       $mpdf->writeHTML($stylesheet1,1);
       $mpdf->writeHTML($mpdf->content);
       $mpdf->Output('Report-B.pdf','I');
-      
+
       exit;
     }
 
