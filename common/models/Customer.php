@@ -39,7 +39,7 @@ class Customer extends \yii\db\ActiveRecord
     {
         return [
             [['fullname', 'person_in_charge', 'address', 'email','email_2', 'contact_no', 'phone_no', 'status', 'username','password','usergroup'], 'required'],
-            [['job_site', 'address'], 'string'],
+            [['job_site', 'address','email_3','email_4'], 'string'],
             [['status', 'created_by', 'updated_by', 'phone_no'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             [['email','email_2'], 'email'],
@@ -62,6 +62,8 @@ class Customer extends \yii\db\ActiveRecord
             'address' => 'Address',
             'email' => 'Email',
             'email_2'=>'Email 2',
+            'email_3'=>'Email 3',
+            'email_4'=> 'Email 4',
             'contact_no' => 'Contact No',
             'phone_no' => 'Phone No',
             'fax'=>'Fax',
