@@ -270,7 +270,10 @@ $this->params['breadcrumbs'][] = $this->title;
                   'label'=>'Drawing Before',
                   'format'=>'raw',
                   'value' => function($model){
-                      return Helper::createLocalImage($model->drawing_before);
+                    if (!empty($model->drawing_before)) {
+                      $path = Yii::getAlias('@api-signature').$model->drawing_before;
+                      return '<a href="'.$path.'" data-pjax=0><img style="width:50px;" src="'.$path.'"></a>';
+                  }
                   },
                 ],
               //  'drawing_after',
