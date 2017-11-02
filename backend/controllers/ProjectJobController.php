@@ -22,6 +22,7 @@ use common\models\User;
 use common\models\ProjectjobIpiTasks;
 use common\models\ProjectjobPissTasks;
 use common\models\ProjectjobSiteWalkActions;
+use common\models\ProjectjobIpiTasksAction;
 
 use common\models\Company;
 //Search Model
@@ -213,6 +214,34 @@ $userGroupArray = ArrayHelper::map(UserGroup::find()->all(), 'id', 'name');
                     $piss->serial_no = $piss->id;
                     $piss->save(false);
                 }
+
+                $data_eps = ProjectjobIpiTasksAction::find()->all();
+                foreach ($data_eps as $key => $value) {
+                    $eps = new ProjectjobIpiTasks();
+                    $eps->description = $value->task_action;
+                    $eps->form_type = 'EPS';
+                    $eps->projectjob_id =$model->id;
+                    $eps->status = 0;
+                    $eps->created_by = Yii::$app->user->id;
+                    $eps->save(false);
+                    $eps->serial_no = $eps->id;
+                    $eps->date_created = date('Y-m-d H:i:s');
+                      $eps->save(false);
+                }
+
+                foreach ($data_eps as $key => $value) {
+                    $pw = new ProjectjobIpiTasks();
+                    $pw->description = $value->task_action;
+                    $pw->form_type = 'PW';
+                    $pw->projectjob_id =$model->id;
+                    $pw->status = 0;
+                    $pw->created_by = Yii::$app->user->id;
+                    $pw->save(false);
+                    $pw->serial_no = $pw->id;
+                    $pw->date_created = date('Y-m-d H:i:s');
+                      $pw->save(false);
+                }
+
 
                 $model1->save();
                 $model4->save();
