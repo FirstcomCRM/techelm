@@ -29,12 +29,14 @@ asort($UserGroupData);
             <?= $form->field($model, 'person_in_charge')->textInput(['maxlength' => true]) ?>
             <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
             <?= $form->field($model, 'email_2')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'email_3')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'email_4')->textInput(['maxlength' => true]) ?>
             <?= $form->field($model, 'contact_no')->textInput(['maxlength' => true, 'type'=> 'number']) ?>
-            <?= $form->field($model, 'phone_no')->textInput(['maxlength' => true, 'type'=> 'number']) ?>
-            <?= $form->field($model, 'status')->dropDownList([1=>'Active', 0=>'Inactive']) ?>
+
         </div>
         <div class="col-md-4">
-
+          <?= $form->field($model, 'phone_no')->textInput(['maxlength' => true, 'type'=> 'number']) ?>
+          <?= $form->field($model, 'status')->dropDownList([1=>'Active', 0=>'Inactive']) ?>
                 <?php echo $form->field($model,'race')->label()->widget(Select2::className(),[
                   'data'=>$RaceInfo,
                   'options'=>['placeholder'=>'Select '],
