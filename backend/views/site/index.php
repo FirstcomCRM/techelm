@@ -25,6 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 ?>
 
+
 <div class="site-index">
 
 <div class=" row">
@@ -74,34 +75,43 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="box-inner">
             <div class="box-header well">
                 <h2><i class="fa fa-map"></i> Project List (Pre-Installation)</h2>
-
             </div>
 
             <div class="box-content row">
                 <div class="col-lg-12 col-md-12">
-                <br/>
 
-                <table style="font-size: 11px;" class="table table-boardered table-striped">
-                    <thead>
-                        <th><b>PROJECT REFERENCE</b></th>
-                        <th><b>CP CODE</b></th>
-                        <th><b>DATE OF SITE-WALK</b></th>
-                        <th><b>STATUS</b></th>
-                        <th><b>Status Flag</b></th>
-                    </thead>
-                    <tbody>
-                        <?php foreach($dataProject as $pRow): ?>
-                            <tr>
-                                <td><?= $pRow['projectjob_id'] ?></td>
-                                <td><?= $pRow['car_park_code'] ?></td>
-                                <td><?= date('d-M-Y', strtotime($pRow['date_site_walk'])) ?></td>
-                                <td><?= $pRow['remarks'] ?></td>
-                                <td><?= Helper::createActiveLabel($pRow['active']); ?></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                  <?php Pjax::begin(); ?>
+                    <?= GridView::widget([
+                          'dataProvider' => $projectJob,
+                          //'filterModel' => $searchModel,
+                          'columns' => [
+                              ['class' => 'yii\grid\SerialColumn'],
 
+                              [
+                                'attribute'=>'project_ref',
+                                'format'=>'raw',
+                                'value'=>function($model){
+                                  return Html::a($model->project_ref,['project-job/view', 'id'=>$model->id]);
+                                },
+                              ],
+                              [
+                                'attribute'=>'customer_id',
+                                'value'=>function($model){
+                                  return Helper::retrieveCustomer($model->customer_id);
+                                },
+                              ],
+                              'start_date',
+                              [
+                                'attribute'=>'status_flag',
+                                'label'=>'Status',
+                                'format'=>'raw',
+                                'value'=>function($model){
+                                    return Helper::projectStatusFlag($model->status_flag);
+                                },
+                              ],
+                          ],
+                      ]); ?>
+                  <?php Pjax::end(); ?>
                 </div>
 
             </div>
