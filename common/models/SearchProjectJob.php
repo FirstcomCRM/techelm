@@ -99,4 +99,23 @@ class SearchProjectJob extends ProjectJob
 
         return $dataProvider;
     }
+
+    public function dashBoard(){
+      $query = ProjectJob::find();
+      $dataProvider = new ActiveDataProvider([
+          'query' => $query,
+          'pagination'=>[
+            'pageSize'=>10, 
+           ],
+         'sort'=> ['defaultOrder' => ['id'=>SORT_DESC]]
+      ]);
+      $dataProvider->query->where(['active' => 1]);
+
+      if (!$this->validate()) {
+          // uncomment the following line if you do not want to return any records when validation fails
+          // $query->where('0=1');
+          return $dataProvider;
+      }
+      return $dataProvider;
+    }
 }
