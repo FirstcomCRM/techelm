@@ -11,6 +11,7 @@ use common\models\User;
 use common\models\Customer;
 use common\models\SearchCustomer;
 use common\models\SearchServicejob;
+use common\models\SearchProjectJob;
 /**
  * Site controller
  */
@@ -66,13 +67,16 @@ class SiteController extends Controller
     {
         $serviceCount = new Service();
         $searchModel = new SearchServicejob();
+        $searchProject = new SearchProjectJob();
         $dataProvider = $searchModel->dashBoard();
+        $projectJob = $searchProject->dashBoard();
         //print_r($dataProvider->getModels());die();
         $data = User::find()->where(['id'=>Yii::$app->user->id])->one();
         if ($data->role == 0) {
 
             return $this->render('index',[
-              'dataProvider'=>$dataProvider
+              'dataProvider'=>$dataProvider,
+              'projectJob'=>$projectJob,
             ]);
         }else{
 
