@@ -77,7 +77,7 @@ $subcon = ArrayHelper::map($data,'id','subcontractor');
         <div class="panel-body">
             <div class="row"> <!--Row for property_officer inputs---->
                 <div class="col-md-3">
-                  <?= $form->field($model1, 'property_officer')->textInput(['maxlength' => true, 'required'=> '']) ?>
+                  <?= $form->field($model1, 'property_officer')->textInput(['maxlength' => true]) ?>
                 </div>
                 <div class="col-md-3">
                    <?= $form->field($model1, 'property_officer_telNo')->textInput(['maxlength' => true, 'type'=> 'number']) ?>
@@ -87,7 +87,7 @@ $subcon = ArrayHelper::map($data,'id','subcontractor');
 
                 </div>
                 <div class="col-md-3">
-                    <?= $form->field($model1, 'property_officer_branch')->textInput(['maxlength' => true, 'required'=> '']) ?>
+                    <?= $form->field($model1, 'property_officer_branch')->textInput(['maxlength' => true]) ?>
                 </div>
             </div>
 
@@ -102,7 +102,7 @@ $subcon = ArrayHelper::map($data,'id','subcontractor');
                        <?= $form->field($model1, 'tc_lew_mobileNo')->textInput(['maxlength' => true, 'type'=> 'number']) ?>
                 </div>
                 <div class="col-md-3">
-                    <?= $form->field($model1, 'tc_lew_email')->textInput(['maxlength' => true, 'required'=> '', 'type'=> 'email']) ?>
+                    <?= $form->field($model1, 'tc_lew_email')->textInput(['maxlength' => true,'type'=> 'email']) ?>
                 </div>
             </div>
 
