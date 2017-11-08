@@ -85,7 +85,7 @@ use common\models\ServicejobActionServiceRepair;
             <th>Engineer</th>
             <th>Service Date</th>
             <th>Status</th>
-            <th>State</th>
+            <th>Site Address</th>
             <th>Service Complaint</th>
             <th>Complaint</th>
             <th>Service Action</th>
@@ -107,7 +107,7 @@ use common\models\ServicejobActionServiceRepair;
               <?php echo Helper::retriveStatusFlag($value['status']) ?>
             </td>
             <td class="dataprovider-row">
-              <?php echo Helper::retriveActiveLabel($value['active']) ?>
+              <?php echo $value['remarks'] ?>
             </td>
             <td class="dataprovider-row">
               <?php
