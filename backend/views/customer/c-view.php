@@ -78,6 +78,8 @@ $this->title = $model->fullname;
                       }
                     ],
                     'serial_no',
+                    'remarks',
+                    'service_date',
               //      'equipment_type',
                     [
                       'attribute'=>'status',
