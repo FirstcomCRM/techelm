@@ -180,7 +180,7 @@ class ReportsController extends Controller
     //  $mpdf->simpleTables = true;
       $mpdf->packTableData = true;
       $mpdf->useSubstitutions=false;
-
+      
       $mpdf->setFooter('{PAGENO}');
       $stylesheet1 = file_get_contents($pathtest);
       $stylesheet = file_get_contents($path);
