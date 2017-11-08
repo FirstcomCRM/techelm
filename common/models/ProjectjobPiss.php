@@ -37,11 +37,12 @@ class ProjectjobPiss extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['car_park_code','start_date', 'property_officer', 'tc_lew', 'property_officer_telNo', 'property_officer_mobileNo', 'property_officer_branch', 'tc_lew_telNo', 'tc_lew_mobileNo', 'tc_lew_email', 'remarks'], 'required'],
+        //    [['car_park_code','start_date', 'property_officer', 'tc_lew', 'property_officer_telNo', 'property_officer_mobileNo', 'property_officer_branch', 'tc_lew_telNo', 'tc_lew_mobileNo', 'tc_lew_email', 'remarks'], 'required'],
+            [['car_park_code'],'required'],
             [['projectjob_id'], 'integer'],
             [['remarks'], 'string'],
             [['tc_lew_email'], 'email'],
-            [['start_date'],'safe'],
+            //[['start_date'],'safe'],
             [['car_park_code', 'property_officer', 'tc_lew', 'property_officer_telNo', 'property_officer_mobileNo', 'property_officer_branch', 'tc_lew_telNo', 'tc_lew_mobileNo'], 'string', 'max' => 255],
         ];
     }
