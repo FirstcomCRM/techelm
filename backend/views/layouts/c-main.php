@@ -183,7 +183,7 @@ $this->title = 'Techelm | Dashboard';
 
         <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: <a
 
-                href="http://usman.it/free-responsive-admin-template">FirstCom Solutions</a></p>
+                href="https://www.firstcom.com.sg/">FirstCom Solutions</a></p>
 
     </footer>
 
