@@ -66,7 +66,8 @@ $this->params['breadcrumbs'][] = $this->title;
                         <?php if (!empty($dataProvider)): ?>
                           <?php foreach ($dataProvider as $key => $value): ?>
                             <tr>
-                              <td><?php echo $value['service_no'] ?>                
+                              <td>
+                                <?= Html::tag('span', Html::encode($value['service_no']), ['title'=>'Site Address: '.$value['remarks'] ,'data-toggle'=>'tooltip', 'data-placement'=>'right']) ?>
                               </td>
                               <td>
                                 <?php echo Helper::retrieveCustomer($value['customer_id']) ?>
