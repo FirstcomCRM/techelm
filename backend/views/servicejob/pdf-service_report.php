@@ -148,7 +148,7 @@ if($image == '/'){
 			  <td class="td-header-right"> <?php echo ' : '.$cust->job_site ?></td>
       <tr>
   		  <td class="td-header-left"><h4>Site Address </h4></td>
-  			 <td class="td-header-right"> <?php echo nl2br($model->remarks) ?></td>
+  			 <td class="td-header-right"> <?php echo ' : '.nl2br($model->remarks) ?></td>
   		</tr>
 			</tr>
 			<tr>
