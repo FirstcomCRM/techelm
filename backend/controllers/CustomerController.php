@@ -137,8 +137,8 @@ class CustomerController extends Controller
         $model->updated_by = Yii::$app->user->identity->id;
         $model->updated_at = date("Y/m/d H:i:s");
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            $dup_user = User::find()->where(['username'=>$model->username, 'active'=>1])->one();
-            $dup_email = User::find()->where(['email'=>$model->email,'active'=>1])->one();
+        /*    $dup_user = User::find()->where(['username'=>$model->username, 'active'=>1])->one();
+            $dup_email = User::find()->where(['email'=>$model->email,'active'=>1])->one();*/
 
           //  die(print_r($dup_user));
             if (!empty($dup_user)) {
@@ -147,12 +147,12 @@ class CustomerController extends Controller
                   'model' => $model,
               ]);
             }
-            if (!empty($dup_email)) {
+          /*  if (!empty($dup_email)) {
               Yii::$app->session->setFlash('error', "Email already exist in User Table");
               return $this->render('create', [
                   'model' => $model,
               ]);
-            }
+            }*/
 
             $user = new User();
             $user->username = $model->username;
@@ -170,7 +170,7 @@ class CustomerController extends Controller
             // print_r($model->getErrors());exit;
             if($model->save()){
                 $user->role = $model->id;
-                $user->save();
+                $user->save(false);
 
                 Yii::$app->session->setFlash('success', "Customer created");
                 return $this->redirect(['view', 'id' => $model->id]);
