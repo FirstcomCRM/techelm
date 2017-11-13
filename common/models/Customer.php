@@ -38,12 +38,12 @@ class Customer extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['fullname', 'person_in_charge', 'address', 'email','email_2', 'contact_no', 'phone_no', 'status', 'username','password','usergroup'], 'required'],
-            [['job_site', 'address','email_3','email_4'], 'string'],
+            [['fullname', 'person_in_charge', 'address','contact_no', 'phone_no', 'status', 'username','password','usergroup'], 'required'],
+            [['job_site', 'address'], 'string'],
             [['status', 'created_by', 'updated_by', 'phone_no'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
-            [['email','email_2'], 'email'],
-            [['email','email_2', 'username'], 'unique'],
+            [['email','email_2','email_3','email_4'], 'email'],
+            [['username'], 'unique'],
             [['fullname', 'person_in_charge', 'email'], 'string', 'max' => 100],
             [['contact_no', 'phone_no', 'race' ,'fax'], 'string', 'max' => 50],
         ];
