@@ -262,7 +262,6 @@ $this->params['breadcrumbs'][] = $this->title;
               'dataProvider'=>$ProjectJobPissTask,
               'columns'=>[
                   ['class' => 'yii\grid\SerialColumn'],
-
                 'serial_no',
                 'description',
 
