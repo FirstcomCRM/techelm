@@ -6,11 +6,13 @@ use common\models\Equipments;
 
  ?>
  <style>
- 
+
  /*.row {
 margin: 10px 0px 0px 0px !important;
 padding: 0px !important;
 }*/
+
+
  </style>
 
 <div class="wrapper">
