@@ -171,7 +171,7 @@ class ReportsController extends Controller
       ini_set('max_execution_time', 180);
       ini_set("memory_limit", "512M");
 
-      $mpdf = new mPDF('utf-8','A3');
+      $mpdf = new mPDF('utf-8','A4-L');
       $mpdf->content = $this->renderPartial('b-pdf_bak1',[
         'searchModel'=>$searchModel,
         'dataProvider' => $dataProvider,
@@ -180,7 +180,7 @@ class ReportsController extends Controller
     //  $mpdf->simpleTables = true;
       $mpdf->packTableData = true;
       $mpdf->useSubstitutions=false;
-      
+
       $mpdf->setFooter('{PAGENO}');
       $stylesheet1 = file_get_contents($pathtest);
       $stylesheet = file_get_contents($path);
