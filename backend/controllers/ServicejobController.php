@@ -67,27 +67,57 @@ class ServicejobController extends Controller
 
       }
       $usergroup_id = User::find()->where(['id'=>Yii::$app->user->id])->one();
-      $groupname = UserGroup::find()->where(['id'=>$usergroup_id->user_group_id])->one();
-      return [
-          'access' => [
-              'class' => AccessControl::className(),
-               'only' => ['index', 'create', 'update', 'view', 'delete'],
-              'rules' => [
-                      [
-                          'actions' => $action[$groupname->name],
-                          'allow' => $allow[$groupname->name],
-                          'roles' => [$groupname->name],
-                      ],
-                    ],
 
-          ],
-          'verbs' => [
-              'class' => VerbFilter::className(),
-              'actions' => [
-                  'logout' => ['post'],
-              ],
-          ],
-      ];
+      if (!empty($usergroup_id)) {
+        $groupname = UserGroup::find()->where(['id'=>$usergroup_id->user_group_id])->one();
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                 'only' => ['index', 'create', 'update', 'view', 'delete'],
+                'rules' => [
+
+                        [
+                            'actions' => $action[$groupname->name],
+                            'allow' => $allow[$groupname->name],
+                            'roles' => [$groupname->name],
+                        ],
+                      ],
+
+            ],
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'logout' => ['post'],
+                ],
+            ],
+        ];
+      }else{
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['login', 'error','sign','c-form','mobile-email','pdf-service'],
+                        'allow' => true,
+                    ],
+                    [
+                        'actions' => ['logout', 'index','sign','c-form','mobile-email','pdf-service'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'logout' => ['post'],
+                ],
+            ],
+        ];
+      }
+
+
+
 
 
     }
@@ -662,11 +692,11 @@ class ServicejobController extends Controller
         $message = "<p>Hi {$cust->person_in_charge},</p>";
         $message .= '<p>Please find attached file.</p>';
         $message .= '<p>Thank you.</p>';
-        $testcc = 'jasonchong@firstcom.com.sg';
+      //  $testcc = 'jasonchong@firstcom.com.sg';
         Yii::$app->mailer->compose()
         ->setTo($cust->email)
         ->setFrom([$eng->email => $eng->fullname])
-        ->setCc($testcc) //temp
+      //  ->setCc($testcc) //temp
         ->setSubject('Service Job')
         ->setHtmlBody($message)
         ->setReplyTo([$eng->email])
