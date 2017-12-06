@@ -416,14 +416,14 @@ if($image == '/'){
             <tr>
                 <td><br>Date &emsp; &emsp; &emsp;  :
                     <?php if (!empty($model->signature_customer_name) ): ?>
-                      <?php echo date('Y-m-d') ?>
+                      <?php echo $model->signature_customer_name_date ?>
                     <?php else: ?>
                       <?php echo '____________________________' ?>
                     <?php endif; ?>
                 </td>
                 <td><br>Date &emsp; &emsp; &emsp; :
                   <?php if (!empty($model->signature_name)): ?>
-                      <?php echo date('Y-m-d'); ?>
+                      <?php echo $model->signature_name_date; ?>
                   <?php else: ?>
                     <?php echo '____________________________'; ?>
                   <?php endif; ?>
