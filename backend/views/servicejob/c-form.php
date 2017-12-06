@@ -32,10 +32,10 @@ use common\models\Service;
 
           <div class="row">
             <div class="col-md-6">
-              <?= $form->field($model, 'customer_name_2')->textInput() ?>
+              <?= $form->field($model, 'customer_name_2')->textInput()->label('Customer Name') ?>
 
               <div class="">
-                <h3 class="override" style="color:black">Client Signature</h3>
+                <h3 class="override" style="color:black">Customer Signature</h3>
               </div>
               <div id="signature1">
 
@@ -45,10 +45,10 @@ use common\models\Service;
               --->
 
               <?php  echo $form->field($model, 'signature_customer_name')->hiddenInput()->label(false)?>
-              
+
 
               <div class="form-group">
-                  <?= Html::submitButton($model->isNewRecord ? '<i class="fa fa-pencil" aria-hidden="true"></i> Create' : '<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update', ['class' => $model->isNewRecord ? 'btn btn-primary' : 'btn btn-primary','id'=>'test']) ?>
+                  <?= Html::submitButton($model->isNewRecord ? '<i class="fa fa-pencil" aria-hidden="true"></i> Create' : '<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Submit', ['class' => $model->isNewRecord ? 'btn btn-primary' : 'btn btn-primary','id'=>'test']) ?>
               </div>
             </div>
           </div>
