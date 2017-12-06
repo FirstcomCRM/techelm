@@ -1,6 +1,5 @@
 <?php
-
- namespace  backend\controllers;
+namespace  backend\controllers;
 
 
 use Yii;
@@ -34,7 +33,6 @@ use yii\filters\AccessControl;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 
-
 /**
  * ServicejobController implements the CRUD actions for Servicejob model.
  */
@@ -50,75 +48,72 @@ class ServicejobController extends Controller
 
     public function behaviors()
     {
+
       $userGroupArray = ArrayHelper::map(UserGroup::find()->all(), 'id', 'name');
 
-      foreach ( $userGroupArray as $uGId => $uGName ){
-          $permission = UserPermission::find()->where(['controller' => 'Servicejob'])->andWhere(['user_group_id' => $uGId ] )->all();
-          $actionArray = [];
-          foreach ( $permission as $p )  {
-              $actionArray[] = $p->action;
-          }
+       foreach ( $userGroupArray as $uGId => $uGName ){
+           $permission = UserPermission::find()->where(['controller' => 'Servicejob'])->andWhere(['user_group_id' => $uGId ] )->all();
+           $actionArray = [];
+           foreach ( $permission as $p )  {
+               $actionArray[] = $p->action;
+           }
 
-          $allow[$uGName] = false;
-          $action[$uGName] = $actionArray;
-          if ( ! empty( $action[$uGName] ) ) {
-              $allow[$uGName] = true;
-          }
+           $allow[$uGName] = false;
+           $action[$uGName] = $actionArray;
+           if ( ! empty( $action[$uGName] ) ) {
+               $allow[$uGName] = true;
+           }
 
-      }
-      $usergroup_id = User::find()->where(['id'=>Yii::$app->user->id])->one();
+       }
+       $usergroup_id = User::find()->where(['id'=>Yii::$app->user->id])->one();
 
-      if (!empty($usergroup_id)) {
-        $groupname = UserGroup::find()->where(['id'=>$usergroup_id->user_group_id])->one();
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                 'only' => ['index', 'create', 'update', 'view', 'delete'],
-                'rules' => [
+     if (!empty($usergroup_id)) {
+         $groupname = UserGroup::find()->where(['id'=>$usergroup_id->user_group_id])->one();
+         return [
+             'access' => [
+                 'class' => AccessControl::className(),
+                  'only' => ['index', 'create', 'update', 'view', 'delete'],
+                 'rules' => [
 
-                        [
-                            'actions' => $action[$groupname->name],
-                            'allow' => $allow[$groupname->name],
-                            'roles' => [$groupname->name],
-                        ],
-                      ],
+                         [
+                             'actions' => $action[$groupname->name],
+                             'allow' => $allow[$groupname->name],
+                             'roles' => [$groupname->name],
+                         ],
+                       ],
 
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
-        ];
-      }else{
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'actions' => ['login', 'error','sign','c-form','mobile-email','pdf-service'],
-                        'allow' => true,
-                    ],
-                    [
-                        'actions' => ['logout', 'index','sign','c-form','mobile-email','pdf-service'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
-        ];
-      }
-
-
-
-
+             ],
+             'verbs' => [
+                 'class' => VerbFilter::className(),
+                 'actions' => [
+                     'logout' => ['post'],
+                 ],
+             ],
+         ];
+       }else{
+         return [
+             'access' => [
+                 'class' => AccessControl::className(),
+                 'rules' => [
+                     [
+                         'actions' => ['login', 'error','sign','c-form','mobile-email','pdf-service'],
+                         'allow' => true,
+                     ],
+                     [
+                         'actions' => ['logout', 'index','sign','c-form','mobile-email','pdf-service'],
+                         'allow' => true,
+                         'roles' => ['@'],
+                     ],
+                 ],
+             ],
+             'verbs' => [
+                 'class' => VerbFilter::className(),
+                 'actions' => [
+                     'logout' => ['post'],
+                 ],
+             ],
+         ];
+       }
 
     }
 
@@ -129,6 +124,7 @@ class ServicejobController extends Controller
 
     public function actionIndex()
     {
+
         $searchModel = new SearchServicejob();
       //  $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $dataProvider = $searchModel->customSearch(Yii::$app->request->queryParams);
@@ -215,6 +211,7 @@ class ServicejobController extends Controller
             $model->status = 3;
           //  $model->end_date = date('Y-m-d h:i:s');
           }
+          $model->signature_customer_name_date	= date('Y-m-d H:i:s');
           $model->save(false);
           $attach = $this->actionPdfService($id,'email');
           $this->composeEmail($model,$attach);
@@ -453,6 +450,8 @@ class ServicejobController extends Controller
           'modelComplaints'=>$modelComplaints,
           'test'=>$test,
       ]);
+      //$mpdf->setHeader('{PAGENO}');
+
       $mpdf->setFooter('{PAGENO}');
       $mpdf->WriteHTML($mpdf->content);
       $mpdf->Output($model->service_no.'.pdf','I');
@@ -472,6 +471,7 @@ class ServicejobController extends Controller
           'company'=>$company,
           'partsTotal'=>$partsTotal
       ]);
+
       $mpdf->setFooter('{PAGENO}');
       $mpdf->WriteHTML($mpdf->content);
       $mpdf->Output($model->service_no.'.pdf','I');
@@ -495,6 +495,7 @@ class ServicejobController extends Controller
           'recordings'=>$recordings,
           'company'=>$company,
       ]);
+      $mpdf->SetHeader("{$model->service_no}| |{$model->remarks}");
       $mpdf->setFooter('{PAGENO}');
       $mpdf->WriteHTML($mpdf->content);
       if ($type == "email") {
@@ -692,11 +693,12 @@ class ServicejobController extends Controller
         $message = "<p>Hi {$cust->person_in_charge},</p>";
         $message .= '<p>Please find attached file.</p>';
         $message .= '<p>Thank you.</p>';
-      //  $testcc = 'jasonchong@firstcom.com.sg';
+        $testcc = 'jasonchong@firstcom.com.sg';
+  //      $testcc = 'eumerjoseph.ramos@yahoo.com';
         Yii::$app->mailer->compose()
         ->setTo($cust->email)
         ->setFrom([$eng->email => $eng->fullname])
-      //  ->setCc($testcc) //temp
+        ->setCc($testcc) //temp
         ->setSubject('Service Job')
         ->setHtmlBody($message)
         ->setReplyTo([$eng->email])
