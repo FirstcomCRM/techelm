@@ -65,4 +65,6 @@ class Projectjob extends \yii\db\ActiveRecord
         $query = "SELECT project_ref as title, start_date as start, status_flag FROM ". Projectjob::tableName();
         return  Yii::$app->db->createCommand($query)->queryAll();
     }
+
+
 }
