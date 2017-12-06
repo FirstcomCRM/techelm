@@ -45,15 +45,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute'=>'customer_id',
                 'label'=>'Customer',
                 'value'=>function($model){
-                // $data =Customer::find()->where(['id'=>$model->customer_id])->one();
-
-                //  return $data->fullname;
-                  return Helper::retrieveCustomer($model->customer_id);
-                  //$customer = ArrayHelper::map($data,'id','fullname');
+                  return Helper::retrieveCustomer($model->customer_id);            
                 },
               ],
               'start_date',
-          //    'end_date',
+
               [
                   'attribute'=>'status_flag',
                   'label' => 'Status',
@@ -72,18 +68,6 @@ $this->params['breadcrumbs'][] = $this->title;
                   }
 
               ],
-              // [
-              //     'label'=> 'Action',
-              //     'format'=> 'raw',
-              //     'value'=> function($model){
-              //         return '<a href="?r=projectjob-ipi%2Fcreate&project_job='.$model->id.'">IPIS</a>&nbsp;<a href="?r=projectjob-piss%2Fcreate&project_job='.$model->id.'">PISS</a>';
-              //     }
-              // ],
-              // 'target_completion_date',
-              // 'first_inspector',
-              // 'second_inspector',
-              // 'third_inspector',
-              // 'status_flag',
 
               ['class' => 'yii\grid\ActionColumn'],
           ],

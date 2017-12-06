@@ -18,7 +18,7 @@ $Status = array(0=>'New');
 $projectjobid = $model->find()->orderBy(['id'=> SORT_DESC])->one();
 //$Inspectors = ArrayHelper::map(User::find()->where(['user_group_id'=> 5])->all(), 'id', 'fullname');
 //$contructors = ArrayHelper::map(User::find()->where(['user_group_id'=> 1])->all(), 'id', 'fullname');
-$Engineers = ArrayHelper::map(User::find()->where(['is_mobile_user'=> 1])->all(), 'id', 'fullname');
+$Engineers = ArrayHelper::map(User::find()->where(['is_mobile_user'=> 1, 'active'=>1])->all(), 'id', 'fullname');
 $selectedEngineers = ArrayHelper::map(ProjectjobAssignment::find()->where(['projectjob_id'=> $model->id])->all(), 'engineer_id', 'engineer_id');
 
 $data = Subcontractor::find()->all();
