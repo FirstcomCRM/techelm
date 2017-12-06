@@ -41,7 +41,7 @@ $dat = Yii::$app->request->referrer*/
 
         <?php echo Html::a('Back',['/customer/c-view', 'id'=>$model->customer_id],['class'=>'btn btn-primary']) ?>
         <?php //echo Html::a('Sign',['/servicejob/sign', 'id'=>$model->id],['class'=>'btn  btn-primary']) ?>
-        <?php if ($model->status == 1): ?>
+        <?php if ($model->status == 1 || $model->status == 2)  : ?>
           <?= Html::a('<i class="fa fa-pencil" aria-hidden="true"></i> Sign', ['c-form', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?php endif; ?>
         <?= Html::a('<i class="fa fa-file-pdf-o" aria-hidden="true"></i> View Service Report', ['pdf-service', 'id' => $model->id], ['class' => 'btn btn-primary','target'=>'_blank']) ?>
