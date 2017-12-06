@@ -9,7 +9,12 @@ use Yii;
  *
  * @property integer $id
  * @property integer $projectjob_id
+ * @property integer $toolboxmeeting_id
  * @property string $employee_code
+ * @property string $date_added
+ * @property string $created_by
+ * @property string $date_updated
+ * @property integer $active
  */
 class ToolboxmeetingAttendees extends \yii\db\ActiveRecord
 {
@@ -27,9 +32,10 @@ class ToolboxmeetingAttendees extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'projectjob_id', 'employee_code'], 'required'],
-            [['id', 'projectjob_id'], 'integer'],
-            [['employee_code'], 'string', 'max' => 255],
+          //  [['projectjob_id', 'toolboxmeeting_id', 'employee_code', 'date_added', 'created_by'], 'required'],
+            [['projectjob_id', 'toolboxmeeting_id', 'active'], 'integer'],
+            [['date_added', 'date_updated'], 'safe'],
+            [['employee_code', 'created_by'], 'string', 'max' => 100],
         ];
     }
 
@@ -41,7 +47,12 @@ class ToolboxmeetingAttendees extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'projectjob_id' => 'Projectjob ID',
+            'toolboxmeeting_id' => 'Toolboxmeeting ID',
             'employee_code' => 'Employee Code',
+            'date_added' => 'Date Added',
+            'created_by' => 'Created By',
+            'date_updated' => 'Date Updated',
+            'active' => 'Active',
         ];
     }
 }
