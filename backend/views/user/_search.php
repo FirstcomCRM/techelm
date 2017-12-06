@@ -14,7 +14,7 @@ $data = UserGroup::find()->select('id, name')->all();
 $group =ArrayHelper::map($data,'id','name');
 asort($group);
 
-$data1 =User::find()->orderBy(['fullname'=>SORT_ASC, 'username'=>SORT_ASC])->all();
+$data1 =User::find()->where(['active'=>1])->orderBy(['fullname'=>SORT_ASC, 'username'=>SORT_ASC])->all();
 $full = ArrayHelper::map($data1,'fullname','fullname');
 $users = ArrayHelper::map($data1,'username','username');
 asort($users);
