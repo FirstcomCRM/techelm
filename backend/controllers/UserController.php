@@ -135,7 +135,7 @@ class UserController extends Controller
            $toRevoke = $auth->getRole($oldrole);
            $auth->revoke($toRevoke, $model->id);
            $usergroup = UserGroup::findOne(['id'=> $model->user_group_id]);
-           $toAssign = $auth->getRole($usergroup);
+           $toAssign = $auth->getRole($usergroup->name);
            $auth->assign($toAssign,$model->id);
            Yii::$app->session->setFlash('success', "User updated");
            return $this->redirect(['view', 'id' => $model->id]);
