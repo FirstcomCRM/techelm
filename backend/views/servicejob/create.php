@@ -39,7 +39,7 @@ $engineer_group_id = 2;
         'customer_no' => ArrayHelper::map(Customer::find()->where(['active'=> 1])->all(), 'id', 'fullname'),
         //'engineer_id' => ArrayHelper::map(User::find()->where(['user_group_id'=> $engineer_group_id])->all(), 'id', 'fullname'),
       //  'engineer_id' => ArrayHelper::map(User::find()->all(), 'id', 'fullname'),
-        'engineer_id' => ArrayHelper::map(User::find()->where(['is_mobile_user'=> 1])->all(), 'id', 'fullname'),
+        'engineer_id' => ArrayHelper::map(User::find()->where(['is_mobile_user'=> 1,'active'=>1])->all(), 'id', 'fullname'),
         'equipments' => ArrayHelper::map(Equipments::find()->where(['active'=>1])->all(), 'equipment_code', 'description'),
         'service_categories' => ArrayHelper::map(ServicejobCategories::find()->where(['active'=> 1])->all(), 'id', 'category'),
     ]) ?>
