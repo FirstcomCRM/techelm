@@ -139,11 +139,15 @@ class Reports extends Servicejob
 
     $result = $rows->select(['servicejob.id as ids', 'servicejob.service_no','servicejob.customer_id','servicejob.engineer_id','servicejob.service_date','servicejob.status','servicejob.active','servicejob.remarks',
         'servicejob_complaint_mobile.servicejob_id','servicejob_complaint_mobile.id',  'servicejob_complaint_mobile.servicejob_category_id',  'servicejob_complaint_mobile.complaint_name',  'servicejob_complaint_mobile.complaint_remark',
-        'servicejob_cm_asr.servicejob_cm_cf_id','servicejob_cm_asr.servicejob_action_service_repair_id'
+        'servicejob_cm_asr.servicejob_cm_cf_id','servicejob_cm_asr.servicejob_action_service_repair_id','servicejob_cm_cf.id'
     ])
     ->from('servicejob')
     ->join('LEFT JOIN', 'servicejob_complaint_mobile', 'servicejob.id = servicejob_complaint_mobile.servicejob_id')
-    ->join('LEFT JOIN', 'servicejob_cm_asr', 'servicejob_cm_asr.servicejob_cm_cf_id=servicejob_complaint_mobile.id')
+    ->join('LEFT JOIN', 'servicejob_cm_cf', 'servicejob_complaint_mobile.id = servicejob_cm_cf.servicejob_complaint_mobile_id')
+    ->join('LEFT JOIN', 'servicejob_cm_asr', 'servicejob_cm_asr.servicejob_cm_cf_id=servicejob_cm_cf.id')
+    ->orderBy(['ids'=>SORT_ASC])
+    //->join('LEFT JOIN', 'servicejob_complaint_mobile', 'servicejob.id = servicejob_complaint_mobile.servicejob_id')
+//    ->join('LEFT JOIN', 'servicejob_cm_asr', 'servicejob_cm_asr.servicejob_cm_cf_id=servicejob_complaint_mobile.id')
     ->andFilterWhere(['customer_id'=>$this->customer_id,
           'engineer_id' => $this->engineer_id,
           'status'=>$this->status,
