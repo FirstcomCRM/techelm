@@ -24,6 +24,8 @@ $this->params['breadcrumbs'][] = $this->title;
 $main_ids = [];
 $i = 1;
 ?>
+
+
 <div class="reports-index">
 
     <div class="panel panel-primary">
