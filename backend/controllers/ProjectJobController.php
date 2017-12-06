@@ -25,6 +25,8 @@ use common\models\ProjectjobSiteWalkActions;
 use common\models\ProjectjobIpiTasksAction;
 
 use common\models\Company;
+use common\models\Toolboxmeeting;
+use common\models\ToolboxmeetingAttendees;
 //Search Model
 use common\models\SearchProjectjobIpi;
 use common\models\SearchProjectjobPiss;
@@ -262,6 +264,28 @@ $userGroupArray = ArrayHelper::map(UserGroup::find()->all(), 'id', 'name');
                     $fcm_id = $data->fcm_registered_id;
                     $this->send($fcm_id, $message, $img_url, $tag, $user_id,$model->id);
                   //  $this->_sentNotification($result, $assignment->engineer_id);
+                }
+
+                //Save projectjob to toolbox meeting
+                $toolbox = new Toolboxmeeting();
+                $toolbox->projectjob_id = $model->id;
+                $toolbox->conducted_by = Yii::$app->user->id;
+                $toolbox->status_flag_tm = 0;
+                $toolbox->date_added = date('Y-m-d H:i:s');
+                $toolbox->active = 1;
+                $toolbox->save(false);
+
+                //Save projectjob to toolboxmeeting_attendees
+                $attend_count = ProjectjobAssignment::find()->where(['projectjob_id'=>$model->id])->asArray()->all();
+                foreach ($attend_count as $value) {
+                    $toolbox_attend = new ToolboxmeetingAttendees();
+                    $toolbox_attend->projectjob_id = $model->id;
+                    $toolbox_attend->toolboxmeeting_id = $toolbox->id;
+                    $toolbox_attend->employee_code = $value['engineer_id'];
+                    $toolbox_attend->active = 1;
+                    $toolbox_attend->created_by = Yii::$app->user->id;
+                    $toolbox_attend->date_added = date('Y-m-d H:i:s');
+                    $toolbox_attend->save(false);
                 }
 
                 if($result){
