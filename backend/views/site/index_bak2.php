@@ -11,42 +11,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 
-//$dataProject = ProjectjobPiss::find()->where(['active' => 1])->all();
+$dataProject = ProjectjobPiss::find()->where(['active' => 1])->all();
 // unsigned servicejob
-//$dataService = Servicejob::find()->limit(10)->orderBy(['id'=>SORT_DESC])->all();
+$dataService = Servicejob::find()->limit(10)->orderBy(['id'=>SORT_DESC])->all();
 $CountUser = User::find()->count();
 $CountServiceJob = Servicejob::find()->where(['status'=> 1])->count();
 $CountCustomers = Customer::find()->count();
 $CountProjectjob = ProjectJob::find()->count();
-
-/*$depend_user = [
-  'class'=> 'yii\caching\DbDependency',
-  'sql'=>'SELECT MAX(id) FROM user',
-];
-
-if ($this->beginCache('user-count',[ 'dependency'=>$depend_user]) ) {
-  $CountUser = User::find()->count();
-  $this->endCache();
-}
-
-$depend_servicejob = [
-  'class'=> 'yii\caching\DbDependency',
-  'sql'=>'SELECT MAX(id) FROM servicejob',
-];
-
-if ($this->beginCache('servicejob-count',[ 'dependency'=>$depend_servicejob]) ) {
-  $CountServiceJob = Servicejob::find()->where(['status'=> 1])->count();
-  $this->endCache();
-}*/
-
-
 
 $this->title = '';
 $this->params['breadcrumbs'][] = $this->title;
 
 
 ?>
-
 
 <div class="site-index">
 
@@ -80,13 +57,11 @@ $this->params['breadcrumbs'][] = $this->title;
         </a>
     </div>
 
-    <?php $unsigned ="?r=servicejob%2Findex&SearchServicejob%5Bstatus%5D=1"  ?>
-
     <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="<?php echo $CountServiceJob . " Unsigned Services"; ?>" class="well top-block" href="<?php echo $unsigned; ?>";>
+        <a data-toggle="tooltip" title="<?php echo $CountServiceJob . " Unsigned Services"; ?>" class="well top-block" href="?r=servicejob%2Findex&SearchServicejob%5Bstatus%5D=1";>
             <i class="glyphicon glyphicon-star green"></i>
             <div>Unsigned Service</div>
-            <span class="notification red"> <?php echo $CountServiceJob; ?></span>
+            <span class="notification red"><?php echo $CountServiceJob; ?></span>
         </a>
     </div>
 
@@ -99,43 +74,34 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="box-inner">
             <div class="box-header well">
                 <h2><i class="fa fa-map"></i> Project List (Pre-Installation)</h2>
+
             </div>
 
             <div class="box-content row">
                 <div class="col-lg-12 col-md-12">
+                <br/>
 
-                  <?php Pjax::begin(); ?>
-                    <?= GridView::widget([
-                          'dataProvider' => $projectJob,
-                          //'filterModel' => $searchModel,
-                          'columns' => [
-                              ['class' => 'yii\grid\SerialColumn'],
+                <table style="font-size: 11px;" class="table table-boardered table-striped">
+                    <thead>
+                        <th><b>PROJECT REFERENCE</b></th>
+                        <th><b>CP CODE</b></th>
+                        <th><b>DATE OF SITE-WALK</b></th>
+                        <th><b>STATUS</b></th>
+                        <th><b>Status Flag</b></th>
+                    </thead>
+                    <tbody>
+                        <?php foreach($dataProject as $pRow): ?>
+                            <tr>
+                                <td><?= $pRow['projectjob_id'] ?></td>
+                                <td><?= $pRow['car_park_code'] ?></td>
+                                <td><?= date('d-M-Y', strtotime($pRow['date_site_walk'])) ?></td>
+                                <td><?= $pRow['remarks'] ?></td>
+                                <td><?= Helper::createActiveLabel($pRow['active']); ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
 
-                              [
-                                'attribute'=>'project_ref',
-                                'format'=>'raw',
-                                'value'=>function($model){
-                                  return Html::a($model->project_ref,['project-job/view', 'id'=>$model->id]);
-                                },
-                              ],
-                              [
-                                'attribute'=>'customer_id',
-                                'value'=>function($model){
-                                  return Helper::retrieveCustomer($model->customer_id);
-                                },
-                              ],
-                              'start_date',
-                              [
-                                'attribute'=>'status_flag',
-                                'label'=>'Status',
-                                'format'=>'raw',
-                                'value'=>function($model){
-                                    return Helper::projectStatusFlag($model->status_flag);
-                                },
-                              ],
-                          ],
-                      ]); ?>
-                  <?php Pjax::end(); ?>
                 </div>
 
             </div>
