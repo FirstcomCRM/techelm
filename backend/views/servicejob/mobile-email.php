@@ -22,5 +22,6 @@ Hi <?php echo $cust->person_in_charge ?>,
 <p>
 Please find attached file.
 </p>
+<?php echo Html::a('Link', ['servicejob/c-view','id'=>$model->id]) ?>
 
 <p>Thank you.</p>
