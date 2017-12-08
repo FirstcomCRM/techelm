@@ -29,7 +29,8 @@ class ServicejobPartReplacementRates extends \yii\db\ActiveRecord
     {
         return [
             [['parts_name', 'unit_price', 'description','category'], 'required'],
-            [['parts_name', 'unit_price', 'description'], 'string', 'max' => 255],
+            [['parts_name', 'description'], 'string', 'max' => 255],
+            [['unit_price'],'number']
         ];
     }
 
