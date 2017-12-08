@@ -16,7 +16,7 @@ $field = [
   'PW'=>'PW',
 ];
 
-$data = User::find()->where(['is_mobile_user'=>1])->orderBy(['fullname'=>SORT_ASC])->all();
+$data = User::find()->where(['is_mobile_user'=>1, 'active'=>1])->orderBy(['fullname'=>SORT_ASC])->all();
 $eng = ArrayHelper::map($data,'id','fullname');
 
 $data = Subcontractor::find()->all();

@@ -101,7 +101,7 @@ $tasks = ProjectjobIpiTasksAction::find()->all();
   </tr>
   <tr>
     <td class="header-left">Signature</td>
-    <td class="header-right">This is signature???? ss<br></td>
+    <td class="header-right"></td>
   </tr>
 </table>
 
