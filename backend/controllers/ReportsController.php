@@ -29,10 +29,13 @@ class ReportsController extends Controller
 
     public function behaviors()
     {
-      $userGroupArray = ArrayHelper::map(UserGroup::find()->all(), 'id', 'name');
-
+      $usergroup_id = User::find()->select(['user_group_id'])->where(['id'=>Yii::$app->user->id])->one();
+      $groupname = UserGroup::find()->select(['name'])->where(['id'=>$usergroup_id->user_group_id])->one();
+      $userGroupArray = ArrayHelper::map(UserGroup::find()->where(['id'=>$usergroup_id->user_group_id])->all(), 'id', 'name');
       foreach ( $userGroupArray as $uGId => $uGName ){
-          $permission = UserPermission::find()->where(['controller' => 'Reports'])->andWhere(['user_group_id' => $uGId ] )->all();
+
+          $permission = UserPermission::find()->select(['action'])->where(['controller' => 'Reports'])->andWhere(['user_group_id' => $uGId ] )->all();
+
           $actionArray = [];
           foreach ( $permission as $p )  {
               $actionArray[] = $p->action;
@@ -45,8 +48,7 @@ class ReportsController extends Controller
           }
 
       }
-      $usergroup_id = User::find()->where(['id'=>Yii::$app->user->id])->one();
-      $groupname = UserGroup::find()->where(['id'=>$usergroup_id->user_group_id])->one();
+
       return [
           'access' => [
               'class' => AccessControl::className(),
@@ -86,6 +88,8 @@ class ReportsController extends Controller
         }
         $session['report-a'] = Yii::$app->request->post();
 
+        $session->close();
+
         if (Yii::$app->request->post() ) {
           $x = 'show';
         }
@@ -103,6 +107,7 @@ class ReportsController extends Controller
       $dataProvider = $searchModel->report_a(Yii::$app->session->get('report-a'));
       $path = Yii::getAlias('@vendor/bower/bootstrap/dist/css/bootstrap.css');
       $pathtest = Yii::getAlias('@webroot/css/reports.css');
+
 
       ini_set('max_execution_time', 180);
       ini_set("memory_limit", "512M");
@@ -150,10 +155,6 @@ class ReportsController extends Controller
           $x = 'show';
         }
 
-        //echo '<pre>';
-        //print_r($dataProvider);
-        //echo '</pre>';
-      //  die();
         return $this->render('b-report_bak1', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -254,7 +255,8 @@ class ReportsController extends Controller
       $mpdf = new mPDF('utf-8','A3');
       $mpdf->content = $this->renderPartial('d-pdf',[
         'searchModel'=>$searchModel,
-        'dataProvider' => $dataProvider,
+      //  'dataProvider' => $dataProvider,
+        'dataProvider' => $dataProvider->query->asArray()->all()
       ]);
 
     //  $mpdf->simpleTables = true;
