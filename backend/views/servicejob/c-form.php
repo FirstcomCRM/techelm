@@ -26,7 +26,10 @@ use common\models\Service;
     <?php $form = ActiveForm::begin(['options'=>['enctype'=>'multipart/form-data'], 'id'=>'dynamic-form']); ?>
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Service Job</h3>
+        <h3 class="panel-title">
+          Service No &nbsp; : <?php echo $model->service_no ?><br>
+          Site Address: <?php echo $model->remarks  ?>
+        </h3>
       </div>
       <div class="panel-body">
 
@@ -49,6 +52,7 @@ use common\models\Service;
 
               <div class="form-group">
                   <?= Html::submitButton($model->isNewRecord ? '<i class="fa fa-pencil" aria-hidden="true"></i> Create' : '<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Submit', ['class' => $model->isNewRecord ? 'btn btn-primary' : 'btn btn-primary','id'=>'test']) ?>
+                  <span style="color:red">After sign, click submit button to complete the service report</span>
               </div>
             </div>
           </div>
