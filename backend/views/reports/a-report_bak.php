@@ -15,9 +15,14 @@ use yii\helpers\ArrayHelper;
 
 $this->title = 'Reports';
 $this->params['breadcrumbs'][] = $this->title;
+//'service_no' => ArrayHelper::map(Service:: find()->where(['active'=> 1])->all(), 'id', 'service_name'),
+//'engineer_id' => ArrayHelper::map(User::find()->where(['user_group_id'=> $engineer_group_id])->all(), 'id', 'fullname'),
+
+
 
 ?>
 <div class="reports-index">
+
 
     <div class="panel panel-primary">
       <div class="panel-heading">
@@ -42,7 +47,8 @@ $this->params['breadcrumbs'][] = $this->title;
                           'dataProvider' => $dataProvider,
                           'columns' => [
                               ['class' => 'yii\grid\SerialColumn'],
-                        
+                          //    'id',
+                            //  'service_no',
                               [
                                 'attribute'=>'service_no',
                                 'format'=>'raw',
@@ -54,14 +60,25 @@ $this->params['breadcrumbs'][] = $this->title;
                                   'attribute'=>'customer_id',
                                   'label' => 'Customer Name',
                                   'value' => function($model){
+                                      /*$data = Customer::find()->where(['id'=> $model->customer_id])->one();
+                                      if (!empty($data)) {
+                                         return $data->fullname;
+                                      }*/
                                       return Helper::retrieveCustomer($model->customer_id);
+
                                   }
                               ],
                               [
                                 'attribute'=>'service_id',
                                 'label'=>'Service',
                                 'value'=>function($model){
-                                  return  Helper::retriveService($model->service_id);
+                                  $service = Service::find()->where(['id'=>$model->service_id])->one();
+                                  if (!empty($service)) {
+                                    return $service->service_name;
+                                  }else{
+                                    return $service = null;
+                                  }
+
                                 },
                               ],
 
@@ -69,7 +86,13 @@ $this->params['breadcrumbs'][] = $this->title;
                                 'attribute'=>'engineer_id',
                                 'label'=> 'Engineer',
                                 'value'=>function($model){
-                                  return Helper::retriveUserFull($model->engineer_id);
+                                  $engineer = User::find()->where(['id'=>$model->engineer_id])->one();
+                                  if (!empty($engineer)) {
+                                      return $engineer->fullname;
+                                  }else {
+                                      return $engineer = null;
+                                  }
+
                                 },
                               ],
                               'service_date',
@@ -77,13 +100,12 @@ $this->params['breadcrumbs'][] = $this->title;
                               [
                                 'attribute'=>'equipment_type',
                                 'value'=>function($model){
-                                  $eq = Equipments::find()->select(['description'])->where(['equipment_code'=> $model->equipment_type])->one();
+                                  $eq = Equipments::find()->where(['equipment_code'=> $model->equipment_type])->one();
                                   if (!empty($eq)) {
                                     return $eq->description;
                                   }else {
                                     return $eq = null;
                                   }
-
                                 },
                               ],
                               'serial_no',

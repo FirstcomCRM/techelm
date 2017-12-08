@@ -48,9 +48,9 @@ use common\models\ServicejobActionServiceRepair;
       <?php if (!empty($searchModel->complaint_cat)): ?>
         <p>Service Complaint:
           <?php
-          $data = ServicejobCategories::find()->where(['id'=>$searchModel->complaint_cat])->one();
+          $data = ServicejobCategories::find()->select(['category'])->where(['id'=>$searchModel->complaint_cat])->one();
           if (!empty($data)) {
-              echo $data->category;
+            echo $data->category;
           }else {
             echo $data = null;
           }
@@ -64,7 +64,7 @@ use common\models\ServicejobActionServiceRepair;
       <?php if (!empty($searchModel->action)): ?>
         <p>Repair Action:
           <?php
-          $data = ServicejobActionServiceRepair::find()->where(['id'=>$searchModel->action])->one();
+          $data = ServicejobActionServiceRepair::find()->select(['action'])->where(['id'=>$searchModel->action])->one();
           if (!empty($data)) {
               echo $data->action;
           }else {
@@ -111,7 +111,7 @@ use common\models\ServicejobActionServiceRepair;
             </td>
             <td class="dataprovider-row">
               <?php
-                $data = ServicejobCategories::find()->where(['id'=>$value['servicejob_category_id']])->one();
+                $data = ServicejobCategories::find()->select(['category'])->where(['id'=>$value['servicejob_category_id']])->one();
                 if (!empty($data)) {
                     echo $data->category;
                 }else {
@@ -123,7 +123,7 @@ use common\models\ServicejobActionServiceRepair;
           <!---  <td><?php //echo nl2br($value['complaint_remark']) ?></td>--->
             <td class="dataprovider-row">
               <?php
-                $data = ServicejobActionServiceRepair::find()->where(['id'=>$value['servicejob_action_service_repair_id']])->one();
+                $data = ServicejobActionServiceRepair::find()->select(['action'])->where(['id'=>$value['servicejob_action_service_repair_id']])->one();
                 if (!empty($data)) {
                     echo $data->action;
                 }else {

@@ -65,25 +65,25 @@ padding: 0px !important;
             <th>Equipment Type</th>
             <th>Serial No</th>
             <th>Status</th>
+            <th>Site Address</th>
           </tr>
         </thead>
-        <?php// foreach ($dataProvider->getModels() as $key => $value): ?>
-        <?php foreach ($dataProvider->query->asArray()->all() as $key => $value): ?>
+        <?php foreach ($dataProvider->getModels() as $key => $value): ?>
         <tr>
-          <td class="dataprovider-row"><?php echo $value['service_no'] ?></td>
-          <td class="dataprovider-row"><?php echo Helper::retrieveCustomer($value['customer_id']) ?></td>
-          <td class="dataprovider-row"><?php echo Helper::retriveService($value['service_id']) ?></td>
-          <td class="dataprovider-row"><?php echo Helper::retriveUserFull($value['engineer_id']) ?></td>
-          <td class="dataprovider-row"><?php echo $value['service_date'] ?></td>
-          <td class="dataprovider-row"><?php echo nl2br($value['remarks']) ?></td>
+          <td class="dataprovider-row"><?php echo $value->service_no ?></td>
+          <td class="dataprovider-row"><?php echo Helper::retrieveCustomer($value->customer_id) ?></td>
+          <td class="dataprovider-row"><?php echo Helper::retriveService($value->service_id) ?></td>
+          <td class="dataprovider-row"><?php echo Helper::retriveUserFull($value->engineer_id) ?></td>
+          <td class="dataprovider-row"><?php echo $value->service_date ?></td>
+          <td class="dataprovider-row"><?php echo nl2br($value->remarks) ?></td>
           <td class="dataprovider-row">
-            <?php $eq = Equipments::find()->where(['equipment_code'=> $value['equipment_type'] ])->select(['description'])->one();
+            <?php $eq = Equipments::find()->where(['equipment_code'=> $value->equipment_type])->one();
               echo $eq->description;
             ?>
           </td>
-          <td class="dataprovider-row"><?php echo $value['serial_no'] ?></td>
-          <td class="dataprovider-row"><?php echo Helper::retriveStatusFlag($value['status']) ?></td>
-        
+          <td class="dataprovider-row"><?php echo $value->serial_no ?></td>
+          <td class="dataprovider-row"><?php echo Helper::retriveStatusFlag($value->status) ?></td>
+            <td class="dataprovider-row"><?php echo $value->remarks ?></td>
         </tr>
         <?php endforeach; ?>
       </table>

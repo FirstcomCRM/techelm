@@ -4,7 +4,20 @@ use common\models\ServiceJob;
 use common\models\ServicejobPartReplacementRates;
 $quantity = 0;
 $total = 0;
+foreach ($dataProvider->getModels() as $key => $value) {
+    $quantity += $value->quantity;
+   $total += $value->total_price;
+}
 
+$total = number_format($total,2);
+$quantity = number_format($quantity);
+
+//echo '<pre>';
+//print_r($dataProvider->getModels() );
+//print_r($dataProvider->query->asArray()->all() );
+//echo '</pre>';
+
+//$dataProvider->query->asArray()->all();
 ?>
 
 <style>
@@ -46,31 +59,35 @@ $total = 0;
              <th>Total Price</th>
            </tr>
          </thead>
-
-         <?php foreach ($dataProvider as $key => $value): ?>
+         <?php foreach ($dataProvider->getModels() as $key => $value): ?>
          <tr>
-           <td class="dataprovider-row"><?php echo $value['service_no']?></td>
+           <td class="dataprovider-row">
+             <?php
 
-           <td class="dataprovider-row"><?php echo $value['parts_name'] ?></td>
-           <td class="dataprovider-row"><?php echo number_format($value['quantity']) ?></td>
+              $data = Servicejob::find()->where(['id'=>$value->servicejob_id])->one();
+              if (!empty($data)) {
+                echo $data->service_no;
 
-           <td class="dataprovider-row"><?php echo number_format($value['unit_price'],2) ?></td>
-           <td class="dataprovider-row"><?php echo number_format($value['total_price'],2); ?></td>
+              }
+              else{
+                echo $data = null;
+              }
+            ?>
+           </td>
+           <td class="dataprovider-row"><?php echo $value->parts_name ?></td>
+           <td class="dataprovider-row"><?php echo number_format($value->quantity) ?></td>
+
+           <td class="dataprovider-row"><?php echo number_format($value->unit_price,2) ?></td>
+           <td class="dataprovider-row"><?php echo number_format($value->total_price,2); ?></td>
          </tr>
-
-         <?php
-          $quantity += $value['quantity'];
-          $total += $value['total_price'];
-          ?>
          <?php endforeach; ?>
-
          <tfoot>
            <tr>
              <td class="dataprovider-row"><strong>Total</strong></td>
              <td class="dataprovider-row"></td>
              <td class="dataprovider-row"><strong><?php echo $quantity ?></strong> </td>
              <td class="dataprovider-row"></td>
-             <td class="dataprovider-row"><strong><?php echo number_format($total,2); ?></strong> </td>
+             <td class="dataprovider-row"><strong><?php echo $total ?></strong> </td>
            </tr>
          </tfoot>
        </table>
