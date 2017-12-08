@@ -416,16 +416,25 @@ if($image == '/'){
             <tr>
                 <td><br>Date &emsp; &emsp; &emsp;  :
                     <?php if (!empty($model->signature_customer_name) ): ?>
-                      <?php echo $model->signature_customer_name_date ?>
+                      <?php if ($model->signature_customer_name_date== '0000-00-00 00:00:00'): ?>
+                        <?php echo $model->end_date_task; ?>
+                      <?php else: ?>
+                          <?php echo $model->signature_customer_name_date ?>
+                      <?php endif; ?>
                     <?php else: ?>
-                      <?php echo '____________________________' ?>
+                      <?php echo ' ' ?>
                     <?php endif; ?>
                 </td>
                 <td><br>Date &emsp; &emsp; &emsp; :
                   <?php if (!empty($model->signature_name)): ?>
-                      <?php echo $model->signature_name_date; ?>
+                    <?php if ($model->signature_name_date == '0000-00-00 00:00:00'): ?>
+                        <?php echo $model->end_date_task; ?>
+                    <?php else: ?>
+                        <?php echo $model->signature_name_date; ?>
+                    <?php endif; ?>
+
                   <?php else: ?>
-                    <?php echo '____________________________'; ?>
+                    <?php echo ' '; ?>
                   <?php endif; ?>
                 </td>
             </tr>
