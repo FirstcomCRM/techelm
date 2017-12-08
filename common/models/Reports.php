@@ -42,7 +42,8 @@ class Reports extends Servicejob
 
 
   public function report_a($params){
-    $query = Servicejob::find();
+  //  $query = Servicejob::find();
+    $query = Servicejob::find()->select(['service_no','customer_id','service_id','engineer_id','service_date','remarks','equipment_type','serial_no','status']);
     $start = '';
     $end = '';
   // add conditions that should always apply here
@@ -81,11 +82,12 @@ class Reports extends Servicejob
         'status' => $this->status,
         'start_date_task' => $this->start_date_task,
         'end_date_task' => $this->end_date_task,
-        'active'=>$this->active
+        'active'=>$this->active,
+        'service_no'=>$this->service_no
     ]);
 
-    $query->andFilterWhere(['like', 'service_no', $this->service_no])
-        ->andFilterWhere(['like', 'remarks', $this->remarks])
+  //  $query->andFilterWhere(['like', 'service_no', $this->service_no])
+      $query->andFilterWhere(['like', 'remarks', $this->remarks])
         ->andFilterWhere(['like', 'remarks_before', $this->remarks_before])
         ->andFilterWhere(['like', 'remarks_after', $this->remarks_after])
         ->andFilterWhere(['like', 'equipment_type', $this->equipment_type])
@@ -106,13 +108,14 @@ class Reports extends Servicejob
           ->JOIN('LEFT JOIN', 'servicejob','servicejob.id=servicejob_parts.servicejob_id')
           //->with('servicejob');
           ->orderBy(['servicejob_parts.id'=>SORT_DESC]);
-      //    ->groupBy('servicejob_parts.servicejob_id');
+        //  ->groupBy('servicejob_parts.servicejob_id');
 
       $dataProvider = new ActiveDataProvider([
           'query' => $query,
           'pagination'=>false,
         //  'sort'=> ['defaultOrder' => ['id'=>SORT_DESC]]
       ]);
+    
       $dataProvider->query->all();
 
       $this->load($params);
