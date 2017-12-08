@@ -55,7 +55,7 @@ Class Helper{
 
 //edr fetch the task action name from  ProjectjobIpiTasksAction. Currently commented
 	public static function getDescription($id){
-		$description = ProjectjobIpiTasksAction::find()->where(['id'=>$id])->one();
+		$description = ProjectjobIpiTasksAction::find()->select(['task_action'])->where(['id'=>$id])->one();
 		if (!empty($description)) {
 				return $description->task_action;
 		}else {
@@ -65,7 +65,7 @@ Class Helper{
 
 	//edr fetch the subcontractor name.
 	public static function retrieveSubCon($id){
-		$subcon =Subcontractor::find()->where(['id'=>$id])->one();
+		$subcon =Subcontractor::find()->select(['subcontractor'])->where(['id'=>$id])->one();
 		if (!empty($subcon)) {
 			return $subcon->subcontractor;
 		}else{
@@ -75,7 +75,7 @@ Class Helper{
 
 	//edr fetch the project reference in projectjob
 	public static function retrieveProjectRef($id){
-		$ref = Projectjob::find()->where(['id'=>$id])->one();
+		$ref = Projectjob::find()->select(['project_ref'])->where(['id'=>$id])->one();
 		if (!empty($ref)) {
 			return $ref->project_ref;
 		}else{
@@ -85,7 +85,7 @@ Class Helper{
 
 //edr fetch the text name of the service job from Service
 	public static function retriveService($id){
-		$service = Service::find()->where(['id'=>$id])->one();
+		$service = Service::find()->where(['id'=>$id])->select(['service_name'])->one();
 		if (!empty($service)) {
 			return $service->service_name;
 		}else {
@@ -105,7 +105,7 @@ Class Helper{
 
 //edr fetch the fullname of the user from User table
 	public static function retriveUserFull($id){
-		$engineer = User::find()->where(['id'=>$id])->one();
+		$engineer = User::find()->where(['id'=>$id])->select(['fullname'])->one();
 		if (!empty($engineer)) {
 			return $engineer->fullname;
 		}else{
@@ -115,7 +115,7 @@ Class Helper{
 
 //edr fetch the fullname of the customer from the Customer Table
 	public static function retrieveCustomer($id){
-		$cust = Customer::find()->where(['id'=> $id])->one();
+		$cust = Customer::find()->where(['id'=> $id])->select(['fullname'])->one();
 		if (!empty($cust)) {
 			return $cust->fullname;
 		}else {
