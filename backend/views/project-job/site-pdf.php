@@ -115,19 +115,19 @@ $s = 1;
         <td style="width:40%" class="data-details"><?php echo $value->description; ?></td>
         <td style="width:10%" class="data-details">
           <?php if ($value->conformance == 'YES'): ?>
-            <?php echo 'Y'; ?>
+            <?php //echo 'Y'; ?>
             &#10004;
           <?php endif; ?>
         </td>
         <td style="width:10%" class="data-details">
           <?php if ($value->conformance == 'NO'): ?>
-            <?php echo 'N'; ?>
+            <?php //echo 'N'; ?>
             &#10004;
           <?php endif; ?>
         </td>
         <td style="width:10%" class="data-details">
           <?php if ($value->conformance == 'N/A'): ?>
-            <?php echo 'NA'; ?>
+            <?php //echo 'NA'; ?>
             &#10004;
           <?php endif; ?>
         </td style="width:20%" class="data-details">
