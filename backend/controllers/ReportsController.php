@@ -32,6 +32,7 @@ class ReportsController extends Controller
       $usergroup_id = User::find()->select(['user_group_id'])->where(['id'=>Yii::$app->user->id])->one();
       $groupname = UserGroup::find()->select(['name'])->where(['id'=>$usergroup_id->user_group_id])->one();
       $userGroupArray = ArrayHelper::map(UserGroup::find()->where(['id'=>$usergroup_id->user_group_id])->all(), 'id', 'name');
+      
       foreach ( $userGroupArray as $uGId => $uGName ){
 
           $permission = UserPermission::find()->select(['action'])->where(['controller' => 'Reports'])->andWhere(['user_group_id' => $uGId ] )->all();
@@ -173,7 +174,7 @@ class ReportsController extends Controller
       ini_set("memory_limit", "512M");
 
       $mpdf = new mPDF('utf-8','A4-L');
-      $mpdf->content = $this->renderPartial('b-pdf_bak1',[
+      $mpdf->content = $this->renderPartial('b-pdf',[
         'searchModel'=>$searchModel,
         'dataProvider' => $dataProvider,
       ]);

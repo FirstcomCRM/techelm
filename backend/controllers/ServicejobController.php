@@ -461,7 +461,8 @@ class ServicejobController extends Controller
 
     public function actionPdfParts($id){
       $model = $this->findModel($id);
-      $modelParts = ServicejobParts::find()->where(['servicejob_id'=>$id])->all();
+      //$modelParts = ServicejobParts::find()->where(['servicejob_id'=>$id])->all();
+      $modelParts = ServicejobParts::find()->select(['parts_name','quantity','unit_price','total_price'])->where(['servicejob_id'=>$id])->asArray()->all();
       $company = Company::find()->one();
       $partsTotal=ServicejobParts::find()->where(['servicejob_id'=>$id])->sum('total_price');
       $mpdf = new mPDF('utf-8');
@@ -690,15 +691,15 @@ class ServicejobController extends Controller
     protected function composeEmail($model,$attach){
         $cust = Customer::find()->where(['id'=>$model->customer_id])->one();
         $eng = User::find()->where(['id'=>$model->engineer_id])->one();
-        $message = "<p>Hi {$cust->person_in_charge},</p>";
+        $message = "<p>Hi, {$cust->person_in_charge},</p>";
         $message .= '<p>Please find attached file.</p>';
         $message .= '<p>Thank you.</p>';
-        $testcc = 'jasonchong@firstcom.com.sg';
+    //    $testcc = 'jasonchong@firstcom.com.sg';
   //      $testcc = 'eumerjoseph.ramos@yahoo.com';
         Yii::$app->mailer->compose()
         ->setTo($cust->email)
         ->setFrom([$eng->email => $eng->fullname])
-        ->setCc($testcc) //temp
+  //      ->setCc($testcc) //temp
         ->setSubject('Service Job')
         ->setHtmlBody($message)
         ->setReplyTo([$eng->email])
