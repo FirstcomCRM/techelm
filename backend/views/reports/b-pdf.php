@@ -3,104 +3,142 @@ use common\components\Helper;
 use common\models\ServiceJob;
 use common\models\ServicejobCategories;
 use common\models\ServicejobActionServiceRepair;
-use common\models\ServicejobComplaintMobile;
-use common\models\ServicejobCmAsr;
-$main_ids = [];
-$i = 1;
 
-if (!empty($dataProvider)) {
-  foreach ($dataProvider as $key => $value) {
-    $main_ids[] = $value['ids'];
-  }
-}
-
-$main_ids = array_unique($main_ids);
-asort($main_ids);
 //echo '<pre>';
-//print_r($main_ids);
+//print_r($dataProvider->getModels());
 //echo '</pre>';
-$dataProvider = null;
+
 ?>
-
-
 <style>
-  table{
-    width:100%;
-    border-collapse: collapse;
-    font-size: 16px;
-  }
-  th,
-  td{
-    padding: 8px;
-  }
-  .breaker{
-    page-break-inside: avoid;
-  }
 
+/*execute override based from reports.css*/
+.dataprovider-row{
+   width:11%;
+}
 </style>
-<?php foreach ($main_ids as $key => $value): ?>
-  <div class="breaker">
-      <div class="title">
-        <h3 style="text-align:center">Service Report Complain Summary</h3>
-      </div>
-      <?php $servicejob = Servicejob::find()->where(['id'=>$value])->one(); ?>
-      <table class="header" border=0>
+
+<?php if (!is_null($searchModel->status)): ?>
+
+<?php endif; ?>
+
+<div class="wrapper">
+  <div class="pdf-wrapper">
+    <div class="Filter-area">
+      <?php if (!empty($searchModel->service_no)): ?>
+        <p>Service No: <?php echo $searchModel->service_no ?></p>
+      <?php endif; ?>
+      <?php if (!empty($searchModel->customer_id)): ?>
+        <p>Customer Name: <?php echo Helper::retrieveCustomer($searchModel->customer_id)  ?></p>
+      <?php endif; ?>
+      <?php if (!empty($searchModel->engineer_id)): ?>
+        <p>Engineer: <?php echo Helper::retriveUserFull($searchModel->engineer_id) ?></p>
+      <?php endif; ?>
+      <?php if (!empty($searchModel->status)): ?>
+        <p>Status: <?php echo Helper::retriveStatusFlag($searchModel->status) ?></p>
+      <?php endif; ?>
+      <?php if (!empty($searchModel->active)): ?>
+        <p>State: <?php echo Helper::retriveActiveLabel($searchModel->active) ?></p>
+      <?php endif; ?>
+      <?php if (!empty($searchModel->service_date)): ?>
+        <p>Service Date: <?php echo $searchModel->service_date ?></p>
+      <?php endif; ?>
+      <?php if (!empty($searchModel->year)): ?>
+        <p>Year: <?php echo $searchModel->year ?></p>
+      <?php endif; ?>
+      <?php if (!empty($searchModel->complaint_cat)): ?>
+        <p>Service Complaint:
+          <?php
+          $data = ServicejobCategories::find()->select(['category'])->where(['id'=>$searchModel->complaint_cat])->one();
+          if (!empty($data)) {
+            echo $data->category;
+          }else {
+            echo $data = null;
+          }
+
+          ?>
+        </p>
+      <?php endif; ?>
+      <?php if (!empty($searchModel->complaint)): ?>
+        <p>Complaint: <?php echo $searchModel->complaint ?></p>
+      <?php endif; ?>
+      <?php if (!empty($searchModel->action)): ?>
+        <p>Repair Action:
+          <?php
+          $data = ServicejobActionServiceRepair::find()->select(['action'])->where(['id'=>$searchModel->action])->one();
+          if (!empty($data)) {
+              echo $data->action;
+          }else {
+            echo $data = null;
+          }
+
+          ?>
+        </p>
+      <?php endif; ?>
+    </div>
+
+    <div class="filter-table">
+      <table class="dataprovider-table">
         <thead>
           <tr>
             <th>Service No</th>
-            <td> <?php echo $servicejob->service_no; ?></td>
-            <th>Service Customer</th>
-            <td> <?php echo Helper::retrieveCustomer($servicejob->customer_id); ?></td>
+            <th>Customer</th>
+            <th>Engineer</th>
             <th>Service Date</th>
-            <td><?php echo $servicejob->service_date; ?></td>
-          </tr>
-          <tr>
+            <th>Status</th>
             <th>Site Address</th>
-            <td><?php echo nl2br($servicejob->remarks)  ?></td>
+            <th>Service Complaint</th>
+            <th>Complaint</th>
+            <th>Service Action</th>
+
           </tr>
         </thead>
-      </table>
-    <br>
-      <table class="complaints" border=1>
-      <thead>
-        <tr>
-          <th style="text-align:center">No</th>
-          <th style="text-align:center">Complaint</th>
-          <th style="text-align:center">Action</th>
-        </tr>
-        <tbody>
-            <?php $complaints = ServicejobComplaintMobile::find()->where(['servicejob_id'=>$value])->all(); ?>
-            <?php foreach ($complaints as $key => $value): ?>
-              <tr>
-                <td style="width:10%; text-align:center"><?php echo $i ?></td>
-                <td style="width:45%"><?php echo $value->complaint_name ?></td>
-                <td style="width:45%">
-                  <?php $actions =  ServicejobCmAsr::find()->where(['servicejob_cm_cf_id'=>$value->id])->all()?>
-                  <ul>
-                      <?php foreach ($actions as $key => $value): ?>
-                        <li>
-                          <?php $repair_id = $value->servicejob_action_service_repair_id;
-                            $repair_name = ServicejobActionServiceRepair::find()->where(['id'=>$repair_id])->one();
-                            if (!empty($repair_name)) {
-                              echo $repair_name->action;
+      <tbody>
+        <?php foreach ($dataProvider as $key => $value): ?>
+          <tr>
+            <td class="dataprovider-row"><?php echo $value['service_no'] ?></td>
+            <td class="dataprovider-row">
+              <?php echo Helper::retrieveCustomer($value['customer_id']) ?>
+            </td>
+            <td class="dataprovider-row">
+              <?php echo Helper::retriveUserFull($value['engineer_id']) ?>
+            </td>
+            <td class="dataprovider-row"><?php echo $value['service_date'] ?></td>
+            <td class="dataprovider-row">
+              <?php echo Helper::retriveStatusFlag($value['status']) ?>
+            </td>
+            <td class="dataprovider-row">
+              <?php echo $value['remarks'] ?>
+            </td>
+            <td class="dataprovider-row">
+              <?php
+                $data = ServicejobCategories::find()->select(['category'])->where(['id'=>$value['servicejob_category_id']])->one();
+                if (!empty($data)) {
+                    echo $data->category;
+                }else {
+                  echo $data = null;
+                }
+            ?>
+            </td>
+            <td class="dataprovider-row"><?php echo $value['complaint_name'] ?></td>
+          <!---  <td><?php //echo nl2br($value['complaint_remark']) ?></td>--->
+            <td class="dataprovider-row">
+              <?php
+                $data = ServicejobActionServiceRepair::find()->select(['action'])->where(['id'=>$value['servicejob_action_service_repair_id']])->one();
+                if (!empty($data)) {
+                    echo $data->action;
+                }else {
+                  echo $data = null;
+                }
+              // echo $value['servicejob_action_service_repair_id']
+              ?>
+            </td>
+          </tr>
+        <?php endforeach; ?>
 
-                            }else{
-                              echo $repair_name = null;  echo $repair_id;
-                            }
-                          ?>
-                        </li>
-                      <?php endforeach; ?>
-                  </ul>
-                </td>
-                <?php $i+=1; ?>
-              </tr>
+      </tbody>
 
-            <?php endforeach; ?>
-        </tbody>
-      </thead>
       </table>
-      <hr>
-      <?php $i = 1 ?>
+    </div>
 
   </div>
-  <?php endforeach; ?>
+</div>
