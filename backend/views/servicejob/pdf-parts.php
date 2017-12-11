@@ -94,7 +94,7 @@ $eq = Equipments::find()->where(['equipment_code'=>$model->equipment_type])->one
       <?php echo $company->address.' '.$company->postal_code?><br>
       Tel: <?php echo $company->telephone ?><br>
       Email: <?php echo $company->email ?><br>
-      
+
     </div>
     <div class="" style="clear: both; margin: 0pt; padding: 0pt; ">
 
@@ -136,10 +136,10 @@ $eq = Equipments::find()->where(['equipment_code'=>$model->equipment_type])->one
 
           <?php foreach ($modelParts as $i => $parts): ?>
             <tr>
-              <td class="serviceparts-info"><?php echo $parts->parts_name; ?></td>
-              <td class="serviceparts-info"><?php echo $parts->quantity ?></td>
-              <td class="serviceparts-info"><?php echo number_format($parts->unit_price,2)  ?></td>
-              <td class="serviceparts-info"><?php echo number_format($parts->total_price,2) ?></td>
+              <td class="serviceparts-info"><?php echo $parts['parts_name']; ?></td>
+              <td class="serviceparts-info"><?php echo $parts['quantity'] ?></td>
+              <td class="serviceparts-info"><?php echo number_format($parts['unit_price'],2)  ?></td>
+              <td class="serviceparts-info"><?php echo number_format($parts['total_price'],2) ?></td>
             </tr>
           <?php endforeach; ?>
           <tr>
