@@ -53,8 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
                       'attribute'=>'customer_id',
                       'label'=>'Customer',
                       'value'=>function ($model){
-                        $customer = Customer::find()->select('fullname')->where(['id'=>$model->customer_id])->one();
-                        return $customer->fullname;
+                        return Helper::retrieveCustomer($model->customer_id);
                       },
                     ],
                     'start_date',
@@ -68,12 +67,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     [
                       'attribute'=>'locked_to_user',
                       'value'=>function($model){
-                        $user = User::find()->where(['id'=>$model->locked_to_user])->one();
-                        if (!empty($user) || $user != 0) {
-                          return $user->fullname;
-                        }else{
-                          return 'N/A';
-                        }
+                          return Helper::retriveUserFull($model->locked_to_user);
                       },
                     ],
 
