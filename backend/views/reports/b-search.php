@@ -61,8 +61,8 @@ $active = [
 
     <?php $form = ActiveForm::begin([
         'action' => ['report-b'],
-       //'method' => 'get',
-       'method' => 'post',
+       'method' => 'get',
+       //'method' => 'post',
     ]); ?>
 
     <div class="row">

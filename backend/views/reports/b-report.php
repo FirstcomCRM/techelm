@@ -8,8 +8,6 @@ use common\models\Customer;
 use common\models\Service;
 use common\models\User;
 use common\models\Servicejob;
-use common\models\ServicejobComplaintMobile;
-use common\models\ServicejobCmAsr;
 use common\models\ServicejobCategories;
 use common\models\ServicejobActionServiceRepair;
 use yii\helpers\ArrayHelper;
@@ -21,8 +19,14 @@ use yii\helpers\ArrayHelper;
 $this->title = 'Reports';
 $this->params['breadcrumbs'][] = $this->title;
 
-$main_ids = [];
-$i = 1;
+
+//echo '<pre>';
+//print_r($dataProvider);
+//echo '</pre>';
+//foreach ($dataProvider as $key => $value) {
+//  echo $value['service_no'].'-'.$value['customer_id'].'<br>';
+//}
+//die('t');
 ?>
 
 
@@ -37,7 +41,6 @@ $i = 1;
       </div>
     </div>
 
-    <?php if ($x=='show'): ?>
       <div class="row dataprovider">
           <div class="col-md-12">
               <div class="panel panel-primary">
@@ -48,93 +51,46 @@ $i = 1;
                     </div>
                     <br>
                     <div class="table-responsive">
-                      <?php if (!empty($dataProvider)): ?>
-                        <?php foreach ($dataProvider as $key => $value): ?>
-                          <?php $main_ids[] = $value['ids'] ?>
-                        <?php endforeach; ?>
-                      <?php else: ?>
-                        NO RECORD FOUND
-                      <?php endif; ?>
+                    
+                        <?= GridView::widget([
+                            'dataProvider' => $dataProvider,
+                          //  'filterModel' => $searchModel,
+                            'columns' => [
+                                ['class' => 'yii\grid\SerialColumn'],
+                                'service_no',
+                                [
+                                  'attribute'=>'fullname',
+                                  'label'=>'Customer',
+                                ],
+                                [
+                                  'attribute'=>'eng_name',
+                                  'label'=>'Engineer',
+                                ],
+                                'service_date',
+                                [
+                                  'attribute'=>'status',
+                                  'value'=>function($model){
+                                    return Helper::retriveStatusFlag($model['status']);
+                                  }
+                                ],
+                                [
+                                  'attribute'=>'com_cat',
+                                  'label'=>'Service Complaint',
+                                ],
+                                'complaint_name',
+                                [
+                                  'attribute'=>'action',
+                                  'label'=>'Service Action',
+                                ],
+                            ],
+                        ]); ?>
                     </div>
-                    <?php $main_ids = array_unique($main_ids,SORT_LOCALE_STRING) ?>
-                    <?php asort($main_ids) ?>
-                    <?php $dataProvider = null; ?>
-
-
-                      <?php foreach ($main_ids as $key => $value): ?>
-                        <div class="panel panel-warning">
-                          <div class="panel-heading">
-                            <h3 class="panel-title">Service Job</h3>
-                          </div>
-                          <div class="panel-body">
-                            <?php $servicejob = Servicejob::find()->where(['id'=>$value])->one(); ?>
-                            <div class="row">
-                              <div class="col-md-4">
-                                <strong>Service No:</strong>
-                                <?= Html::tag('span', Html::encode($servicejob->service_no), ['title'=>'Site Address: '.$servicejob->remarks ,'data-toggle'=>'tooltip', 'data-placement'=>'right']) ?>
-                              </div>
-                              <div class="col-md-4">
-                                <strong>Service Customer:</strong>
-                                <?php echo Helper::retrieveCustomer($servicejob->customer_id); ?>
-                              </div>
-                              <div class="col-md-4">
-                                <strong>Service Date:</strong>
-                                <?php echo $servicejob->service_date; ?>
-                              </div>
-                            </div>
-                            <hr>
-
-                            <table class="table table-bordered">
-                              <thead>
-                                <th>No</th>
-                                <th>Complaint</th>
-                                <th>Action</th>
-                              </thead>
-                              <tbody>
-                                <?php $complaints = ServicejobComplaintMobile::find()->where(['servicejob_id'=>$value])->all(); ?>
-                                <?php foreach ($complaints as $key => $value): ?>
-
-                                  <tr>
-                                    <td style="width:10%"><?php echo $i ?></td>
-                                    <td style="width:45%"><?php echo $value->complaint_name ?></td>
-                                    <td style="width:45%">
-                                      <?php $actions =  ServicejobCmAsr::find()->where(['servicejob_cm_cf_id'=>$value->id])->all()?>
-
-                                        <ul>
-                                          <?php foreach ($actions as $key => $value): ?>
-                                            <li>
-                                              <?php $repair_id = $value->servicejob_action_service_repair_id;
-                                                $repair_name = ServicejobActionServiceRepair::find()->where(['id'=>$repair_id])->one();
-                                                if (!empty($repair_name)) {
-                                                  echo $repair_name->action;
-
-                                                }else{
-                                                  echo $repair_name = null;  echo $repair_id;
-                                                }
-
-                                              ?>
-                                            </li>
-                                          <?php endforeach; ?>
-                                        </ul>
-
-                                    </td>
-                                  </tr>
-                                  <?php $i += 1 ?>
-                                <?php endforeach; ?>
-                                <?php $i = 1; ?>
-                              </tbody>
-                            </table>
-
-                          </div>
-                        </div>
-                      <?php endforeach; ?>
-
 
                   </div>
               </div>
           </div>
       </div>
-   <?php endif; ?>
+
 
 
 

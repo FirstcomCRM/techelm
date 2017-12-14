@@ -23,6 +23,9 @@ use common\models\ServicejobActionServiceRepair;
 
 <div class="wrapper">
   <div class="pdf-wrapper">
+    <div class="title">
+      <h3 style="text-align:center">Service Report Complaint Summary</h3>
+    </div>
     <div class="Filter-area">
       <?php if (!empty($searchModel->service_no)): ?>
         <p>Service No: <?php echo $searchModel->service_no ?></p>

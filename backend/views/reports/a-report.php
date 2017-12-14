@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php  echo $this->render('a_search', ['model' => $searchModel]); ?>
       </div>
     </div>
-    <?php if ($x=='show'): ?>
+    <?php if (!empty($dataProvider->getModels() )): ?>
       <div class="row dataprovider">
           <div class="col-md-12">
               <div class="panel panel-primary">
@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
                           'dataProvider' => $dataProvider,
                           'columns' => [
                               ['class' => 'yii\grid\SerialColumn'],
-                        
+
                               [
                                 'attribute'=>'service_no',
                                 'format'=>'raw',

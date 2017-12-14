@@ -37,7 +37,7 @@ $i = 1;
       </div>
     </div>
 
-    <?php if ($x=='show'): ?>
+
       <div class="row dataprovider">
           <div class="col-md-12">
               <div class="panel panel-primary">
@@ -134,7 +134,7 @@ $i = 1;
               </div>
           </div>
       </div>
-   <?php endif; ?>
+
 
 
 

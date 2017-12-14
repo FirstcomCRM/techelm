@@ -15,6 +15,8 @@ $total = 0;
  }
 </style>
 
+
+
  <div class="wrapper">
    <div class="pdf-wrapper">
      <div class="title">
@@ -50,10 +52,8 @@ $total = 0;
          <?php foreach ($dataProvider as $key => $value): ?>
          <tr>
            <td class="dataprovider-row"><?php echo $value['service_no']?></td>
-
            <td class="dataprovider-row"><?php echo $value['parts_name'] ?></td>
            <td class="dataprovider-row"><?php echo number_format($value['quantity']) ?></td>
-
            <td class="dataprovider-row"><?php echo number_format($value['unit_price'],2) ?></td>
            <td class="dataprovider-row"><?php echo number_format($value['total_price'],2); ?></td>
          </tr>

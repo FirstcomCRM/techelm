@@ -27,17 +27,57 @@ foreach ($dataProvider->getModels() as $key => $value) {
 $total = number_format($total,2);
 $quantity = number_format($quantity);
 //die('t');
-?>
-<div class="reports-index">
 
-<?php
-//foreach ($dataProvider->getModels() as $key => $value) {
-  //echo $value.'<br>';
-//}
-//echo '<pre>';
-//print_r($dataProvider->getModels());
-//echo '</pre>';
- ?>
+$excelGrid = [
+  ['class' => 'yii\grid\SerialColumn'],
+  //'id',
+    [
+        //'attribute'=>'service_no',
+      'label'=>'Service Nos',
+      'value'=>function ($model){
+        $data = Servicejob::find()->select(['remarks','service_no'])->where(['id'=>$model->servicejob_id])->one();
+        if (!empty($data)) {
+          return $data->service_no;
+        }
+        else{
+          return $data = null;
+        }
+      }
+    ],
+    [
+        'attribute'=>'service_date',
+        'label'=>'Service Date',
+        'value'=>function($model){
+          $data = Servicejob::find()->select(['service_date'])->where(['id'=>$model->servicejob_id])->one();
+          if (!empty($data) ) {
+            return $data->service_date;
+          }
+          else{
+            return $data = null;
+          }
+        },
+    ],
+    [
+      'attribute'=>'parts_name',
+      'format'=>'raw',
+    ],
+
+    [
+      'attribute'=>'quantity',
+      'label'=> 'Quantity_a',
+      'footer'=>$quantity,
+    ],
+    'unit_price',
+    [
+      'attribute'=>'total_price',
+      'label'=> 'Total Price',
+      'footer'=>$total,
+    ],
+
+];
+?>
+
+<div class="reports-index">
 
     <div class="panel panel-primary">
       <div class="panel-heading">
@@ -47,13 +87,34 @@ $quantity = number_format($quantity);
         <?php  echo $this->render('d_search', ['model' => $searchModel]); ?>
       </div>
     </div>
-    <?php if ($x=='show'): ?>
+    <?php if (!empty($dataProvider->getModels() )): ?>
       <div class="row dataprovider">
           <div class="col-md-12">
               <div class="panel panel-primary">
                   <div class="panel-heading"><span>Service Job Parts</span></div>
                   <div class="panel-body">
                     <div class="text-right">
+                      <?php echo ExportMenu::widget([
+                        'dataProvider' => $dataProvider,
+                        'columns' => $excelGrid,
+                        'fontAwesome' => true,
+                        'asDropdown'=>true,
+                        'dropdownOptions'=>[
+                          'class' => 'btn btn-primary',
+                        ],
+                        'showColumnSelector'=>true,
+                        'columnSelectorOptions'=>[
+                          'class'=>'btn btn-primary',
+                        ],
+                        'exportConfig'=>[
+                          ExportMenu::FORMAT_TEXT=>false,
+                          ExportMenu::FORMAT_PDF => false,
+                          ExportMenu::FORMAT_HTML=>false,
+                        ],
+                        'filename'=>'Parts Summary - '.date('Y-m-d'),
+                        'target'=>ExportMenu::TARGET_SELF,
+                        'showConfirmAlert'=>false,
+                     ]); ?>
                         <?php echo Html::a('<i class="fa fa-file-pdf-o" aria-hidden="true"></i> Download PDF',['pdf-d'],['class'=>'btn btn-primary', 'target'=>'_blank']) ?>
                     </div>
                     <br>
@@ -65,10 +126,11 @@ $quantity = number_format($quantity);
                             'columns'=>[
                               ['class' => 'yii\grid\SerialColumn'],
                               [
-                                'label'=>'Service No',
+                                  'attribute'=>'service_no',
+                              //  'label'=>'Service No',
                                 'format'=>'raw',
                                 'value'=>function ($model){
-                                  $data = Servicejob::find()->where(['id'=>$model->servicejob_id])->one();
+                                  $data = Servicejob::find()->select(['remarks','service_no'])->where(['id'=>$model->servicejob_id])->one();
                                   if (!empty($data)) {
                                     return Html::tag('span', $data->service_no, ['title'=>'Site Address: '.$data->remarks, 'data-toggle'=>'tooltip','data-placement'=>'right']);
                                   }
@@ -76,6 +138,19 @@ $quantity = number_format($quantity);
                                     return $data = null;
                                   }
                                 }
+                              ],
+                              [
+                                  'attribute'=>'service_date',
+                                  //'label'=>'Service Date',
+                                  'value'=>function($model){
+                                    $data = Servicejob::find()->select(['service_date'])->where(['id'=>$model->servicejob_id])->one();
+                                    if (!empty($data) ) {
+                                      return $data->service_date;
+                                    }
+                                    else{
+                                      return $data = null;
+                                    }
+                                  },
                               ],
                             //  'service.id',
                               'parts_name',
@@ -91,6 +166,7 @@ $quantity = number_format($quantity);
                                 'label'=> 'Total Price',
                                 'footer'=>$total,
                               ],
+
                             ],
                         ])
                        ?>
@@ -100,9 +176,7 @@ $quantity = number_format($quantity);
               </div>
           </div>
       </div>
+
    <?php endif; ?>
-
-
-
 
 </div>

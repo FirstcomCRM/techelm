@@ -54,8 +54,8 @@ $active = [
 
     <?php $form = ActiveForm::begin([
         'action' => ['report-d'],
-       //'method' => 'get',
-       'method' => 'post',
+        'method' => 'get',
+      // 'method' => 'post',
     ]); ?>
 
     <div class="row">
@@ -104,6 +104,23 @@ $active = [
           ]) ?>
       </div>
 
+      <div class="col-md-3">
+        <?php echo $form->field($model,'service_date')->label(false)->widget(DateRangePicker::classname(), [
+          'useWithAddon'=>false,
+          'convertFormat'=>true,
+          'pluginOptions'=>[
+            'locale'=>[
+              //'format'=> 'M j Y',
+              //'format'=> 'm-d-Y',
+              'format'=> 'Y-m-d',
+            ],
+          ],
+          'options'=>[
+            'placeholder'=>'Service Date',
+            'class'=>'form-control'
+          ],
+        ]); ?>
+    </div>
 
       <div class="col-md-3">
         <div class="form-group">
