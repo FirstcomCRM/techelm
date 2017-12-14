@@ -32,7 +32,7 @@ class ReportsController extends Controller
       $usergroup_id = User::find()->select(['user_group_id'])->where(['id'=>Yii::$app->user->id])->one();
       $groupname = UserGroup::find()->select(['name'])->where(['id'=>$usergroup_id->user_group_id])->one();
       $userGroupArray = ArrayHelper::map(UserGroup::find()->where(['id'=>$usergroup_id->user_group_id])->all(), 'id', 'name');
-      
+
       foreach ( $userGroupArray as $uGId => $uGName ){
 
           $permission = UserPermission::find()->select(['action'])->where(['controller' => 'Reports'])->andWhere(['user_group_id' => $uGId ] )->all();
@@ -79,26 +79,19 @@ class ReportsController extends Controller
     public function actionReportA()
     {
         $searchModel = new Reports();
-      //  $dataProvider = $searchModel->report_a(Yii::$app->request->queryParams);
-        $dataProvider = $searchModel->report_a(Yii::$app->request->post());
-        $x = 'hide';
+        $dataProvider = $searchModel->report_a(Yii::$app->request->queryParams);
 
         $session = Yii::$app->session;
         if (!$session->isActive) {
            $session->open();
         }
-        $session['report-a'] = Yii::$app->request->post();
 
-        $session->close();
-
-        if (Yii::$app->request->post() ) {
-          $x = 'show';
-        }
+        $session['report-a'] =Yii::$app->request->queryParams;
 
         return $this->render('a-report', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'x'=>$x,
+
         ]);
     }
 
@@ -108,7 +101,6 @@ class ReportsController extends Controller
       $dataProvider = $searchModel->report_a(Yii::$app->session->get('report-a'));
       $path = Yii::getAlias('@vendor/bower/bootstrap/dist/css/bootstrap.css');
       $pathtest = Yii::getAlias('@webroot/css/reports.css');
-
 
       ini_set('max_execution_time', 180);
       ini_set("memory_limit", "512M");
@@ -141,32 +133,30 @@ class ReportsController extends Controller
     public function actionReportB()
     {
         $searchModel = new Reports();
-      //  $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $dataProvider = $searchModel->report_b(Yii::$app->request->post());
-        $x = 'hide';
+      //  $dataProvider = $searchModel->report_b(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->report_ba(Yii::$app->request->queryParams);
 
         $session = Yii::$app->session;
         if (!$session->isActive) {
            $session->open();
         }
-        $session['report-b'] = Yii::$app->request->post();
+        $session['report-b'] = Yii::$app->request->queryParams;
+      //  $session['sort-test']=  $dataProvider->query->all();
 
-
-        if (Yii::$app->request->post() ) {
-          $x = 'show';
-        }
-
-        return $this->render('b-report_bak1', [
+        return $this->render('b-report', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'x'=>$x,
+
         ]);
     }
+
 
     public function actionPdfB(){
       $searchModel = new Reports();
 
       $dataProvider = $searchModel->report_b(Yii::$app->session->get('report-b'));
+    //    $dataProvider = $searchModel->report_ba(Yii::$app->session->get('report-b'));
+    //  $dataProvider = Yii::$app->session->get('sort-test');
       $path = Yii::getAlias('@vendor/bower/bootstrap/dist/css/bootstrap.css');
       $pathtest = Yii::getAlias('@webroot/css/reports.css');
 
@@ -183,7 +173,7 @@ class ReportsController extends Controller
       $mpdf->packTableData = true;
       $mpdf->useSubstitutions=false;
 
-      $mpdf->setFooter('{PAGENO}');
+      //$mpdf->setFooter('{PAGENO}');
       $stylesheet1 = file_get_contents($pathtest);
       $stylesheet = file_get_contents($path);
       $mpdf->writeHTML($stylesheet,1);
@@ -222,24 +212,18 @@ class ReportsController extends Controller
     public function actionReportD()
     {
         $searchModel =  new Reports();
-      //  $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $dataProvider = $searchModel->report_d(Yii::$app->request->post());
-        $x = 'hide';
-
-        if (Yii::$app->request->post() ) {
-          $x = 'show';
-        }
+        $dataProvider = $searchModel->report_d(Yii::$app->request->queryParams);
 
         $session = Yii::$app->session;
               if (!$session->isActive) {
                $session->open();
-            }
-        $session['report-d'] = Yii::$app->request->post();
+        }
+        $session['report-d'] = Yii::$app->request->queryParams;
 
         return $this->render('d-report', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'x'=>$x,
+
         ]);
     }
 
