@@ -1,12 +1,12 @@
 .wrapper{
-  font-size: 20px;
+  font-size: 18px;
   font-family: Tahoma, sans-serif;
 }
 
 .dataprovider-table{
   width: 100%;
   border-collapse: collapse;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .dataprovider-table th{
