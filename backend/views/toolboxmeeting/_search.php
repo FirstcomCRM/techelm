@@ -2,10 +2,15 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use common\models\User;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\SearchToolboxmeeting */
 /* @var $form yii\widgets\ActiveForm */
+
+$data = User::find()->select(['id','fullname'])->where(['active'=>1, 'is_mobile_user'=>1])->orderBy(['fullname'=>SORT_ASC])->all();
+$engineer = Arrayhelper::map($data,'id','fullname');
 ?>
 
 <div class="toolboxmeeting-search">
@@ -15,27 +20,11 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?php $form->field($model, 'id') ?>
-
-    <?= $form->field($model, 'projectjob_id') ?>
-
-    <?= $form->field($model, 'meeting_image') ?>
-
-    <?= $form->field($model, 'meeting_details') ?>
-
-    <?= $form->field($model, 'conducted_by') ?>
-
-    <?php // echo $form->field($model, 'designation') ?>
-
-    <?php // echo $form->field($model, 'month') ?>
-
-    <?php // echo $form->field($model, 'signature') ?>
-
-    <?php // echo $form->field($model, 'status_flag_tm') ?>
+    <?php echo $form->field($model, 'conducted_by')->dropDownList($engineer,['prompt'=>'Conducted By'])->label(false) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
+      <?= Html::submitButton('<i class="fa fa-search" aria-hidden="true"></i> Search', ['class' => 'btn btn-primary']) ?>
+      <?php echo Html::a('<i class="fa fa-undo" aria-hidden="true"></i> Reset',['index'],['class'=>'btn btn-default']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

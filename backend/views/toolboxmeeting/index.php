@@ -8,42 +8,46 @@ use common\models\ProjectJob;
 /* @var $searchModel common\models\SearchToolboxmeeting */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Meetings';
+$this->title = 'Toolbox Meeting';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="toolboxmeeting-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'columns' => [
-            // ['class' => 'yii\grid\SerialColumn'],
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Search</h3>
+      </div>
+      <div class="panel-body">
+        <?php  echo $this->render('_search', ['model' => $searchModel]); ?>
+      </div>
+    </div>
 
-            'id',
-            // 'projectjob_id',
-            [
-                'label' => 'Project Ref',
-                'format' => 'raw',
-                'value' => function($model){
-                    return ProjectJob::find(['project_ref'])->where(['id'=> $model->projectjob_id])->one()['project_ref'];
-                }
-            ],
-            [
-                'label' => 'Meeting Image',
-                'format' => 'raw',
-                'value' => function($model){
-                    return Helper::createImage($model->meeting_image);
-                }
-            ],
-            'meeting_details',
-            'conducted_by',
-            // 'designation',
-            // 'month',
-            // 'signature',
-            // 'status_flag',
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+
+      </div>
+      <div class="panel-body">
+        <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            'columns' => [
+                 ['class' => 'yii\grid\SerialColumn'],
+
+                'site_address',
+                'date_added',
+                'meeting_details',
+                [
+                  'attribute'=>'conducted_by',
+                  'value'=>function($model){
+                    return Helper::retriveUserFull($model->conducted_by);
+                  },
+                ],
+                
+
+                ['class' => 'yii\grid\ActionColumn'],
+            ],
+        ]); ?>
+      </div>
+    </div>
+
 </div>

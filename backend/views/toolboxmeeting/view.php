@@ -28,13 +28,17 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'projectjob_id',
-            'meeting_image',
+
+            'site_address',
             'meeting_details',
             'conducted_by',
-            'designation',
-            'signature',
+            [
+              'attribute'=>'conducted_by',
+              'value'=>function($model){
+                return Helper::retriveUserFull($model->conducted_by);
+              }
+            ],
+            'date_added',
             [
                 'label' => 'Status',
                 'format' => 'raw',
