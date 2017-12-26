@@ -220,7 +220,8 @@ $userGroupArray = ArrayHelper::map(UserGroup::find()->all(), 'id', 'name');
                 $data_eps = ProjectjobIpiTasksAction::find()->all();
                 foreach ($data_eps as $key => $value) {
                     $eps = new ProjectjobIpiTasks();
-                    $eps->description = $value->task_action;
+                  //  $eps->description = $value->task_action;
+                    $eps->description = $value->id;
                     $eps->form_type = 'EPS';
                     $eps->projectjob_id =$model->id;
                     $eps->status = 0;
@@ -233,7 +234,8 @@ $userGroupArray = ArrayHelper::map(UserGroup::find()->all(), 'id', 'name');
 
                 foreach ($data_eps as $key => $value) {
                     $pw = new ProjectjobIpiTasks();
-                    $pw->description = $value->task_action;
+                //    $pw->description = $value->task_action;
+                    $pw->description = $value->id;
                     $pw->form_type = 'PW';
                     $pw->projectjob_id =$model->id;
                     $pw->status = 0;
@@ -267,16 +269,16 @@ $userGroupArray = ArrayHelper::map(UserGroup::find()->all(), 'id', 'name');
                 }
 
                 //Save projectjob to toolbox meeting
-                $toolbox = new Toolboxmeeting();
+              /*  $toolbox = new Toolboxmeeting();
                 $toolbox->projectjob_id = $model->id;
                 $toolbox->conducted_by = Yii::$app->user->id;
                 $toolbox->status_flag_tm = 0;
                 $toolbox->date_added = date('Y-m-d H:i:s');
                 $toolbox->active = 1;
-                $toolbox->save(false);
-
+                $toolbox->save(false);TM no longer link to projectjob
+              */
                 //Save projectjob to toolboxmeeting_attendees
-                $attend_count = ProjectjobAssignment::find()->where(['projectjob_id'=>$model->id])->asArray()->all();
+            /*    $attend_count = ProjectjobAssignment::find()->where(['projectjob_id'=>$model->id])->asArray()->all();
                 foreach ($attend_count as $value) {
                     $toolbox_attend = new ToolboxmeetingAttendees();
                     $toolbox_attend->projectjob_id = $model->id;
@@ -286,7 +288,7 @@ $userGroupArray = ArrayHelper::map(UserGroup::find()->all(), 'id', 'name');
                     $toolbox_attend->created_by = Yii::$app->user->id;
                     $toolbox_attend->date_added = date('Y-m-d H:i:s');
                     $toolbox_attend->save(false);
-                }
+                }*/
 
                 if($result){
                   Yii::$app->session->setFlash('success', "Project job created");
@@ -340,7 +342,6 @@ $userGroupArray = ArrayHelper::map(UserGroup::find()->all(), 'id', 'name');
         $model3 = ProjectjobIpi::findOne(['projectjob_id'=>$id, 'form_type'=> 'PW']);
         $model4 = ProjectjobIpi::findOne(['projectjob_id'=>$id, 'form_type'=> 'EPS']);
         $engineers = ProjectjobAssignment::findOne(['projectjob_id'=> $id]);
-
 
 
       //  $engineers = ProjectjobAssignment::find()->where(['projectjob_id'=> $id])->all();
