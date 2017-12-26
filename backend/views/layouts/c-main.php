@@ -54,6 +54,7 @@ $this->title = 'Techelm | Dashboard';
 
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <link rel="icon" href="favicon.ico" type="image/ico">
 </head>
 
 

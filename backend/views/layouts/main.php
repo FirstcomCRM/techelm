@@ -50,6 +50,7 @@ $this->title = 'Techelm | Dashboard';
     <link rel="stylesheet" href="plugins/timepicker/stylesheets/wickedpicker.css" />
     <link rel="stylesheet" type="text/css" href="fullcalendar/fullcalendar.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <link rel="icon" href="favicon.ico" type="image/ico">
 </head>
 
 <body>
