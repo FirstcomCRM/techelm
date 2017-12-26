@@ -117,6 +117,19 @@ class ProjectjobSiteInspectionController extends Controller
                 $data->serial_no = $model->id; //edr, this is temporary
                 $data->save(false);
             }
+
+            $message = 'Site Inspection '.$model->field_type.' has been created';
+            $user_id = $model->inspected_by;
+            $img_url = '';
+            if ($model->field_type == 'EPS') {
+              $tag = 'project_job_assigned_eps';
+            }else{
+              $tag = 'project_job_assigned_pw';
+            }
+            $data = User::find()->where(['id'=>$user_id])->one();
+            $fcm_id = $data->fcm_registered_id;
+            $this->send($fcm_id, $message, $img_url, $tag, $user_id,$model->id);
+
             Yii::$app->session->setFlash('success', "Site in-process created");
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
@@ -163,8 +176,7 @@ class ProjectjobSiteInspectionController extends Controller
     }
 
     public function actionInspectionPdf($id){
-  //    die('inspection');
-  //  $this->layout = 'mobile-layout';
+
       $model = $this->findModel($id);
       $company = Company::find()->one();
     //  $pissTask = ProjectjobIpiTasks::find()->where(['projectjob_id'=>$model->project_ref, 'form_type'=>$model->field_type])->all();
@@ -197,4 +209,68 @@ class ProjectjobSiteInspectionController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+    /*
+    * To trigger firebase notification
+    */
+    protected function send($reg_id, $message, $img_url, $tag, $user_id,$id){
+      //if (!defined('constant')) define('constant', 'value');
+      if (!defined('GOOGLE_API_KEYS')) {
+          define("GOOGLE_API_KEYS", "AIzaSyAxewEiK97rX2fGN");// Techelm Mobile, ask richard for correct api key
+      }
+
+      if (!defined('GOOGLE_GCM_URLS')) {
+          define("GOOGLE_GCM_URLS", "https://fcm.googleapis.com/fcm/send");
+      }
+    //  define("GOOGLE_API_KEYS", "AIzaSyAxewEiK97rX2fGNZ-USeIxWujL68201uKY"); // Techelm Mobile, ask richard for correct api key
+    //  define("GOOGLE_GCM_URLS", "https://fcm.googleapis.com/fcm/send");
+
+      $data = array(
+        'title'=>'Android Learning',
+        'message'=>$message,
+        'image'=>$img_url,
+        'tag'=>$tag,
+        'user_id'=>$user_id,
+      );
+
+      $fields = array(
+          'to' => $reg_id ,
+          'priority'	=> "high",
+          //'data' => array("title" => "Android Learning", "message" => $message, "image"=> $img_url, "tag" => $tag)
+          'data'=> $data,
+      );
+
+      $headers = array(
+          //GOOGLE_GCM_URL,
+          'Content-Type: application/json',
+          'Authorization: key=' . GOOGLE_API_KEYS,
+      );
+
+        $ch = curl_init();
+        curl_setopt_array($ch, [
+           CURLOPT_POST           => true,
+           CURLOPT_URL =>'https://android.googleapis.com/gcm/send',
+           CURLOPT_SSL_VERIFYPEER => false,
+           CURLOPT_BINARYTRANSFER => true,
+           CURLOPT_RETURNTRANSFER => true,
+           CURLOPT_HEADER         => false,
+           CURLOPT_FRESH_CONNECT  => false,
+           CURLOPT_FORBID_REUSE   => false,
+           CURLOPT_HTTPHEADER     => $headers,
+            CURLOPT_POSTFIELDS     => json_encode($fields),
+        ]);
+        $result = curl_exec($ch);
+
+
+
+    curl_close( $ch );
+     $result = json_decode($result , true);
+
+
+  //   die($result);
+     Yii::$app->session->setFlash('success', "Service Job created");
+     return $this->redirect(['view', 'id' => $id]);
+
+    }
+
 }
