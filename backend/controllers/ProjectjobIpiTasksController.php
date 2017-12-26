@@ -201,14 +201,15 @@ class ProjectjobIpiTasksController extends Controller
     //    print_r($model->description);die();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             $model->date_updated = date('Y-m-d h:i:s');
+              $model->save(false);
         //    $model->target_completion_date = date('Y-m-d', strtotime($model->target_completion_date));
-            $corrective = ProjectjobIpiCorrectiveActions::find()->where(['projectjob_task_id'=>$model->id])->one();
-      //      print_r($corrective);die();
+          /*  $corrective = ProjectjobIpiCorrectiveActions::find()->where(['projectjob_task_id'=>$id])->one();
+            //print_r($corrective);die();
             $corrective->serial_no = $model->serial_no;
             $corrective->car_no = $model->corrective_actions;
             $corrective->date_updated = date('Y-m-d h:i:s');
-            $corrective->save(false);
-            $model->save(false);
+            $corrective->save(false);*/
+
 
             Yii::$app->getSession()->setFlash('success', 'Inspection Task  has been updated!');
             return $this->redirect(['project-job/view', 'id' => $model->projectjob_id]);
