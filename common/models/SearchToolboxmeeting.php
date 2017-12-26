@@ -19,7 +19,7 @@ class SearchToolboxmeeting extends Toolboxmeeting
     {
         return [
             [['id', 'projectjob_id', 'status_flag_tm'], 'integer'],
-            [['meeting_image', 'meeting_details', 'conducted_by', 'designation', 'signature'], 'safe'],
+            [['meeting_image', 'meeting_details', 'conducted_by', 'designation', 'signature','site_address'], 'safe'],
         ];
     }
 
@@ -67,7 +67,7 @@ class SearchToolboxmeeting extends Toolboxmeeting
         $query->andFilterWhere(['like', 'meeting_image', $this->meeting_image])
             ->andFilterWhere(['like', 'meeting_details', $this->meeting_details])
             ->andFilterWhere(['like', 'conducted_by', $this->conducted_by])
-            ->andFilterWhere(['like', 'designation', $this->designation])
+
             ->andFilterWhere(['like', 'signature', $this->signature]);
 
         return $dataProvider;
