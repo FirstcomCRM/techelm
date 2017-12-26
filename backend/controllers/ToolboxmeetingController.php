@@ -53,44 +53,7 @@ class ToolboxmeetingController extends Controller
                       ],
                     ],
 
-              /*  'rules' => [
-                    [
-                        'actions' => $action['admin'],
-                        'allow' => $allow['admin'],
-                        'roles' => ['admin'],
-                    ],
 
-                    [
-                        'actions' => $action['engineer'],
-                        'allow' => $allow['engineer'],
-                        'roles' => ['engineer'],
-                    ],
-                    [
-                        'actions' => $action['mechanic'],
-                        'allow' => $allow['mechanic'],
-                        'roles' => ['mechanic'],
-                    ],
-                    [
-                        'actions' => $action['purchasing'],
-                        'allow' => $allow['purchasing'],
-                        'roles' => ['purchasing'],
-                    ],
-                    [
-                        'actions' => $action['inspector'],
-                        'allow' => $allow['inspector'],
-                        'roles' => ['inspector'],
-                    ],
-                    [
-                        'actions' => $action['contractor'],
-                        'allow' => $allow['contractor'],
-                        'roles' => ['contractor'],
-                    ],
-                    [
-                        'actions' => $action['client'],
-                        'allow' => $allow['client'],
-                        'roles' => ['client'],
-                    ],
-                ],*/
             ],
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -136,6 +99,7 @@ class ToolboxmeetingController extends Controller
     public function actionCreate()
     {
         $model = new Toolboxmeeting();
+
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
