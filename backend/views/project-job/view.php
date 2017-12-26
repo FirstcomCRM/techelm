@@ -175,13 +175,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 //  'projectjob_id',
                   'serial_no',
                   'target_completion_date',
-                  'description',
-              //    [
-              //      'attribute'=>'description',
-              //      'value'=>function($model){
-              //        return Helper::getDescription($model->description);
-              //      }
-                //  ],
+                  [
+                    'attribute'=>'description',
+                    'value'=>function($model){
+                      return Helper::getDescription($model->description);
+                   }
+                  ],
                   'corrective_actions',
                   'form_type',
                   [
@@ -254,12 +253,13 @@ $this->params['breadcrumbs'][] = $this->title;
           <?php Pjax::begin(); ?>
           <?php echo GridView::widget([
               'dataProvider'=>$ProjectJobPissTask,
+              'formatter' => ['class' => 'yii\i18n\Formatter','nullDisplay' => ''],
               'columns'=>[
                   ['class' => 'yii\grid\SerialColumn'],
                 'serial_no',
                 'description',
 
-                [
+              /*  [
                   'label'=>'Drawing Before',
                   'format'=>'raw',
                   'value' => function($model){
@@ -268,9 +268,19 @@ $this->params['breadcrumbs'][] = $this->title;
                       return '<a href="'.$path.'" data-pjax=0><img style="width:50px;" src="'.$path.'"></a>';
                   }
                   },
-                ],
+                ],*/
+
+              [
+                  'label'=>'Drawing Before',
+                  'format'=>'raw',
+                  'value' => function($model){
+                      if (!empty($model->drawing_before)) {
+                        return $this->render('draw_before', ['model' => $model]);
+                      }
+                    },
+              ],
               //  'drawing_after',
-                [
+              /*  [
                   'label'=>'Drawing After',
                   'format'=>'raw',
                   'value' => function($model){
@@ -281,7 +291,20 @@ $this->params['breadcrumbs'][] = $this->title;
                       	return '<a href="'.$path.'" data-pjax=0><img style="width:50px;" src="'.$path.'"></a>';
                     }
                   },
+                ],*/
+
+                [
+                  'label'=>'Drawing After',
+                  'format'=>'raw',
+                  'value' => function($model){
+                    //  return Helper::createLocalImage($model->drawing_after);
+                    // return Helper::createApiDrawing($model->drawing_after);
+                    if (!empty($model->drawing_after)) {
+                        return $this->render('draw_after', ['model' => $model]);
+                    }
+                  },
                 ],
+
                 [
                     'attribute'=>'active',
                     'label' => 'Active',
