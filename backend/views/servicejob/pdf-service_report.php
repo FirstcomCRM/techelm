@@ -175,11 +175,11 @@ if($image == '/'){
 			</tr>
 			<tr>
 			  <td class="td-header-left"><h4>Start Date </h4></td>
-			  <td class="td-header-right"> <?php echo ' : '.$model->start_date_task ?></td>
+			  <td class="td-header-right"> <?php echo ' : '.Helper::retrieveDateTime($model->start_date_task) ?></td>
 			</tr>
 			<tr>
 			  <td class="td-header-left"><h4>End Date </h4></td>
-			  <td class="td-header-right"> <?php echo ' : '.$model->end_date_task ?></td>
+			  <td class="td-header-right"> <?php echo ' : '.Helper::retrieveDateTime($model->end_date_task) ?></td>
 			</tr>
       <tr>
 			  <td class="td-header-left"><h4>Remarks Before </h4></td>
@@ -196,7 +196,7 @@ if($image == '/'){
 
     </div>
 
-    <div class="service-complaints">
+     <div class="service-complaints">
       <h3 style="padding-left:3em;">COMPLAINT AND ACTION</h3>
       <table class="table-complaints" style="width:100%;" border="1">
           <thead>
@@ -219,6 +219,7 @@ if($image == '/'){
                 <td class="td-complait-details-n" style="width:35%">
                   <ul>
                       <li><?php echo $value->complaint_name ?></li>
+
                   </ul>
                   <br>
                    Remark:
@@ -228,7 +229,7 @@ if($image == '/'){
                 <td style="text-align:justified" class="td-complait-details" style="width:45%">
                   <?php $file = ServicejobCmCf::find()->where(['servicejob_complaint_mobile_id'=>$value->id])->all();?>
                     <?php foreach ($file as $k => $v): ?>
-                      <?php $action = ServicejobCmAsr::find()->where(['servicejob_cm_cf_id'=>$v->id])->all();?>
+                      <?php $action = ServicejobCmAsr::find()->where(['servicejob_cm_cf_id'=>$v->id,'servicejob_complaint_mobile_id'=>$value->complaint_id])->all();?>
 
                         <?php foreach ($action as $key => $value): ?>
                       <ul>
@@ -284,6 +285,7 @@ if($image == '/'){
 
     <?php $i = 1 ?>
     <br><br>
+
     <div class="service-image breaker">
       <h3 style="padding-left:3em;">IMAGE CAPTURED</h3>
       <table class="table-image" border="1">
@@ -312,7 +314,7 @@ if($image == '/'){
                     <td style="width:20%" class="td-audio"><?php echo $value->taken ?></td>
                     <td style="width:50%" class="td-audio">
                     <?php
-                       echo Html::a($value->upload_name,['servicejob/download-image','upload_name'=>$value->file_path]);
+                        echo Html::a($value->upload_name,['servicejob/download-image','upload_name'=>$value->file_path]);
                      ?>
                     </td>
                     <td style="width:20%" class="td-audio"><?php echo ReformSize::formatSizeUnits($value->size) ?></td>
@@ -323,7 +325,7 @@ if($image == '/'){
 
       </table>
     </div>
-  <?php   echo $path3; ?>
+
     <?php $i = 1 ?>
     <br><br>
     <div class="service-audio breaker">
@@ -367,7 +369,7 @@ if($image == '/'){
 
   </div>--->
 
-    <br>
+   <br>
       <div class="service-acknowledge breaker">
         <table border="0">
           <thead>
@@ -375,8 +377,8 @@ if($image == '/'){
               <th class="td-acknowledge">Customer Acknowledgement</th>
               <th>Techelm Technologies Pte Ltd </th>
             </tr>
-          </thead>
-            <tr>
+           </thead>
+             <tr>
                 <td><br> <span style="verti">Signature &emsp;   :</span>
                   <?php if (!empty($model->signature_customer_name)): ?>
                       <img src="<?php echo $image_url ?>" alt="" style="width:150px;height:150px;vertical-align:middle">
@@ -412,14 +414,13 @@ if($image == '/'){
                   <?php endif; ?>
                 </td>
             </tr>
-
             <tr>
                 <td><br>Date &emsp; &emsp; &emsp;  :
                     <?php if (!empty($model->signature_customer_name) ): ?>
                       <?php if ($model->signature_customer_name_date== '0000-00-00 00:00:00'): ?>
-                        <?php echo $model->end_date_task; ?>
+                        <?php echo Helper::retrieveDateTime($model->end_date_task); ?>
                       <?php else: ?>
-                          <?php echo $model->signature_customer_name_date ?>
+                          <?php echo Helper::retrieveDateTime($model->signature_customer_name_date) ?>
                       <?php endif; ?>
                     <?php else: ?>
                       <?php echo ' ' ?>
@@ -428,9 +429,9 @@ if($image == '/'){
                 <td><br>Date &emsp; &emsp; &emsp; :
                   <?php if (!empty($model->signature_name)): ?>
                     <?php if ($model->signature_name_date == '0000-00-00 00:00:00'): ?>
-                        <?php echo $model->end_date_task; ?>
+                        <?php echo Helper::retrieveDateTime($model->end_date_task); ?>
                     <?php else: ?>
-                        <?php echo $model->signature_name_date; ?>
+                        <?php echo Helper::retrieveDateTime($model->signature_name_date); ?>
                     <?php endif; ?>
 
                   <?php else: ?>
@@ -439,9 +440,11 @@ if($image == '/'){
                 </td>
             </tr>
 
+
         </table>
       </div>
 
   </div>
+
 
 </div>
